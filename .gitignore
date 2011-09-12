@@ -1,1 +1,6 @@
 */campusnet/*
+*.swp
+*.swo
+*.pyc
+pythonenv/*
+doc/*

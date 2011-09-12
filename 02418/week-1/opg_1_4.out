@@ -1,0 +1,47 @@
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.8697 -0.7923 -0.2494  1.4811  4.0709 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 139.9667     1.7512  79.925  6.7e-13 ***
+x             1.8406     0.2822   6.522 0.000184 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 2.564 on 8 degrees of freedom
+Multiple R-squared: 0.8417,	Adjusted R-squared: 0.8219 
+F-statistic: 42.53 on 1 and 8 DF,  p-value: 0.0001839 
+
+
+Call:
+lm(formula = y ~ x + xsq)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.2818 -0.5550 -0.2412  1.3427  3.7618 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 138.83333    3.18002  43.658 8.64e-10 ***
+x             2.40727    1.32811   1.813    0.113    
+xsq          -0.05152    0.11767  -0.438    0.675    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 2.704 on 7 degrees of freedom
+Multiple R-squared: 0.8459,	Adjusted R-squared: 0.8019 
+F-statistic: 19.21 on 2 and 7 DF,  p-value: 0.001437 
+
+[1] "--------------------------------"
+[1] "Predict for x=-3 and x=13 and compare with the real values"
+[1] "135.9 and 158.6"
+[1] "Model 1 prediction of x=-3: 134.444848484848"
+[1] "Model 2 prediction of x=-3: 131.147878787879"
+[1] "Model 1 prediction of x=13: 163.894545454545"
+[1] "Model 2 prediction of x=13: 161.421818181818"
+

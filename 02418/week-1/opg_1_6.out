@@ -1,0 +1,41 @@
+
+Call:
+lm(formula = times ~ age)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-4.368 -2.043 -0.971  3.050  5.115 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  81.8968     6.0920  13.443 1.35e-08 ***
+age           0.1536     0.1149   1.336    0.206    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 3.142 on 12 degrees of freedom
+Multiple R-squared: 0.1295,	Adjusted R-squared: 0.05698 
+F-statistic: 1.785 on 1 and 12 DF,  p-value: 0.2063 
+
+[1] "----"
+
+Call:
+lm(formula = times ~ age + agesq)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.2593 -1.7198  0.6807  1.2691  4.2838 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 235.55405   46.47460   5.068 0.000361 ***
+age          -5.78748    1.79049  -3.232 0.007982 ** 
+agesq         0.05632    0.01696   3.322 0.006809 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 2.319 on 11 degrees of freedom
+Multiple R-squared: 0.5654,	Adjusted R-squared: 0.4864 
+F-statistic: 7.157 on 2 and 11 DF,  p-value: 0.01022 
+
+

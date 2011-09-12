@@ -1,0 +1,20 @@
+
+Call:
+lm(formula = timefull ~ agefull)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.015658 -0.007717  0.002503  0.007918  0.010871 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.60257    0.13175   12.16 1.93e-06 ***
+agefull      0.37791    0.07649    4.94  0.00113 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 0.01011 on 8 degrees of freedom
+Multiple R-squared: 0.7531,	Adjusted R-squared: 0.7223 
+F-statistic: 24.41 on 1 and 8 DF,  p-value: 0.001135 
+
+

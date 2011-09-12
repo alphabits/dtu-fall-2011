@@ -1,0 +1,5 @@
+            Df Sum Sq Mean Sq F value   Pr(>F)   
+fattype      3 1636.5   545.5  5.4063 0.006876 **
+Residuals   20 2018.0   100.9                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
