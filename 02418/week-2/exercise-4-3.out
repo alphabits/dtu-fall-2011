@@ -1,0 +1,61 @@
+
+Call:
+lm(formula = yield ~ mu + fertiliser.b + fertiliser.c + fertiliser.d + 
+    fertiliser.e + fertiliser.f - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2500 -1.6562  0.1875  1.5625  4.5000 
+
+Coefficients:
+               Estimate Std. Error  t value Pr(>|t|)    
+mu            1.050e+01  1.435e+00    7.319  8.5e-07 ***
+fertiliser.b -2.500e-01  2.029e+00   -0.123    0.903    
+fertiliser.c  1.125e+00  2.029e+00    0.554    0.586    
+fertiliser.d  1.250e+00  2.029e+00    0.616    0.546    
+fertiliser.e  1.269e-16  2.029e+00 6.26e-17    1.000    
+fertiliser.f  1.500e+00  2.029e+00    0.739    0.469    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 2.869 on 18 degrees of freedom
+Multiple R-squared: 0.9525,	Adjusted R-squared: 0.9367 
+F-statistic: 60.15 on 6 and 18 DF,  p-value: 6.213e-11 
+
+            Df  Sum Sq Mean Sq F value Pr(>F)
+fertilisers  5  11.802  2.3604  0.2867 0.9142
+Residuals   18 148.187  8.2326               
+
+Call:
+lm(formula = yield ~ mu + fertiliser.b + fertiliser.c + fertiliser.d + 
+    fertiliser.e + fertiliser.f + area.2 + area.3 + area.4 - 
+    1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.6458 -1.1458  0.0625  1.4687  2.2708 
+
+Coefficients:
+               Estimate Std. Error  t value Pr(>|t|)    
+mu            1.273e+01  1.155e+00   11.025 1.36e-08 ***
+fertiliser.b -2.500e-01  1.333e+00   -0.188 0.853767    
+fertiliser.c  1.125e+00  1.333e+00    0.844 0.412019    
+fertiliser.d  1.250e+00  1.333e+00    0.938 0.363307    
+fertiliser.e  4.849e-16  1.333e+00 3.64e-16 1.000000    
+fertiliser.f  1.500e+00  1.333e+00    1.125 0.278224    
+area.2       -1.417e+00  1.089e+00   -1.301 0.212750    
+area.3       -2.083e+00  1.089e+00   -1.914 0.074917 .  
+area.4       -5.417e+00  1.089e+00   -4.976 0.000166 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 1.885 on 15 degrees of freedom
+Multiple R-squared: 0.9829,	Adjusted R-squared: 0.9726 
+F-statistic: 95.83 on 9 and 15 DF,  p-value: 1.293e-11 
+
+            Df Sum Sq Mean Sq F value   Pr(>F)   
+fertilisers  5 11.802  2.3604  0.6640 0.656380   
+areas        3 94.865 31.6215  8.8953 0.001254 **
+Residuals   15 53.323  3.5549                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 

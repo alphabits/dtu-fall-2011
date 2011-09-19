@@ -84,3 +84,31 @@ R code
 Result
 
 .. literalinclude:: week-2/exercise-4-1.out
+
+Exercise 4.3/4
+--------------
+In these exercises a simple one-way anova model and a two way anova without interactions must be expressed as a linear regression model. The R code
+
+.. literalinclude:: week-2/exercise-4-3.R
+    :language: r
+
+results in
+
+.. literalinclude:: week-2/exercise-4-3.out
+
+
+------
+Week 3
+------
+
+Exercise 6.1
+------------
+In this exercise a regression model for fuel prices must be found using 
+
+    * Forward selection
+
+    * Backward selection
+
+    * Stepwise selection
+
+
