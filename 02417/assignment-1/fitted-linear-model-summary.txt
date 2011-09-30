@@ -1,0 +1,23 @@
+
+> summary(model)
+
+Call:
+lm(formula = fpi ~ rtime)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-24.978  -4.033  -0.391   4.747  15.323 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -4.198e+03  1.154e+02  -36.37   <2e-16 ***
+rtime        2.162e+00  5.794e-02   37.31   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 7.681 on 310 degrees of freedom
+Multiple R-squared: 0.8178,	Adjusted R-squared: 0.8172 
+F-statistic:  1392 on 1 and 310 DF,  p-value: < 2.2e-16 
+
+
+> sink()
