@@ -1,6 +1,4 @@
-# Loads data in variable "data"
 source('loaddata.R')
-
 
 model <- lm(fpi ~ rtime)
 pdf('fitted-linear-model.pdf')

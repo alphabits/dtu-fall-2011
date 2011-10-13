@@ -24,7 +24,7 @@
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{\small\textit{02417 Time Series Analysis - Fall 2011 - Anders Hørsted (s082382)}}
+\lhead{\small\textit{Assignment 1 -- 02417 Time Series Analysis -- Anders Hørsted (s082382)}}
 \rhead{\thepage}
 \chead{}
 \lfoot{}\cfoot{}\rfoot{}
@@ -76,6 +76,7 @@
 \newcommand\fpi{FPI}
 \newcommand\E[1]{\text{E}[#1]}
 \newcommand\Var[1]{\text{Var}[#1]}
+\newcommand\myverb[1]{{\footnotesize\texttt{#1}}}
 
 \usepackage[scaled]{beramono}
 \usepackage{listings}
@@ -126,7 +127,7 @@ In this report predictions for the fuel prize index (\fpi) in the first half of 
     \label{fig:plot-question-1}
 \end{figure}
 
-To get an overview of the data the fuel price index is plotted as a function of time and the resulting plot is shown in figure~\ref{fig:plot-question-1}. From the plot it is seen that the \fpi\ grew rapidly from 1979 to 1985 and with small variation between months (the points almost follows a straight line). After a period with decrease between 1985-1987 a long period (1987-1997) with slow increase follows. The variation between months is larger than for the 1979-1985 period. From 2000 to mid-2001 the \fpi\ increases rapidly followed by a short decrease from mid-2001 to start-2002. From start-2002 to the end of 2004 the \fpi\ once more grows fast and the variation between months is larger than for any of the previous periods. \\
+To get an overview of the data, the fuel price index is plotted as a function of time and the resulting plot is shown in figure~\ref{fig:plot-question-1}. From the plot it is seen that the \fpi\ grew rapidly from 1979 to 1985 and with small variation between months (the points almost follows a straight line). After a period with decrease between 1985-1987 a long period (1987-1997) with slow increase follows. The variation between months is larger than for the 1979-1985 period. From 2000 to mid-2001 the \fpi\ increases rapidly followed by a short decrease from mid-2001 to start-2002. From start-2002 to the end of 2004 the \fpi\ once more grows fast and the variation between months is larger than for any of the previous periods. \\
 
 From the description of the data it should be clear that it won't make much sense to estimate a global mean and standard deviation from the data as the \fpi\ don't seem to vary around a mean value but rather to steadily increase, only interrupted by short periods of decrease. We therefore have to rule out the constant mean model\footnote{See equation $3.63$ in \cite{hm}} and will instead start out by fitting a global linear model to the data.
 
@@ -164,26 +165,26 @@ To predict the \fpi\ for the first half of 2005 a local constant mean model was 
 \begin{figure}
     \centering
     \includegraphics[width=100mm]{exp-smoothing-lambda-2.pdf}
-    \caption{Plot of simple linear model}
+    \caption{Plot of predictions in the local constant mean model with $\lambda=0.2$}
     \label{fig:local-constant-2}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=100mm]{exp-smoothing-lambda-8.pdf}
-    \caption{Plot of simple linear model}
+    \caption{Plot of predictions in the local constant mean model with $\lambda=0.8$}
     \label{fig:local-constant-8}
 \end{figure}
 
 \pagebreak
 
 \section*{Local trend model}
-In the previous section the predictions was improved, compared to the simple linear model, by giving more weight to the most recent observation. But the model was simple and the predictions were almost equal which doesn't seem plausible. In this section a model that is linear in time and that gives most weight to the most recent observations is utilized. The model is called a local trend model and is just a special kind of WLS model where the weights are chosen as powers of the forgetting factor $\lambda$. Predictions and confidence intervals for the predictions is calculated (with $\lambda=0.6$) and the result is shown in figure~\ref{fig:local-trend-model-normal}. It can be seen that the prediction for January 2005 is again very close to the value of December 2004, but unlike the previous model, predictions for the other months of 2005 are now linearly increasing. 
+In the previous section the predictions was improved, compared to the simple linear model, by giving more weight to the most recent observations. But the model was simple and the predictions were almost equal which doesn't seem plausible. In this section a model that is linear in time and that gives most weight to the most recent observations is utilized. The model is called a local trend model and is just a special kind of WLS model where the weights are chosen as powers of the forgetting factor $\lambda$. Predictions and confidence intervals for the predictions are calculated (with $\lambda=0.6$) and the result is shown in figure~\ref{fig:local-trend-model-normal}. It can be seen that the prediction for January 2005 is again very close to the value of December 2004, but unlike the previous model, predictions for the other months of 2005 are now linearly increasing. 
 
 \begin{figure}
     \centering
     \includegraphics[width=100mm]{local-trend-predict-normal-6.pdf}
-    \caption{Plot of simple linear model}
+    \caption{Plot of local trend model with $\lambda=0.6$. No correction for small values of $\lambda$ in the calculation of $\widehat{\sigma}^2$}
     \label{fig:local-trend-model-normal}
 \end{figure}
 
@@ -193,33 +194,57 @@ The confidence intervals for the predictions seems very optimistic but this coul
     S(\widehat{\boldsymbol{\theta}}) = \sum_{j=0}^{N-1} \lambda^j(Y_{N-j} - \boldsymbol{f}^T(-j)\widehat{\boldsymbol{\theta}}_N) \\
     \widehat{\sigma}^2 = \frac{S(\widehat{\boldsymbol{\theta}})}{N-p}
 \end{gather*}
-The problem with this approach is that for most values of $j$, $\lambda^j$ is smaller than machine precision and therefore only a small number of the $N$ observations are included in the calculation. But from the formula above it is seen that we still divide by $N-p$ so $\widehat{\sigma}^2$ becomes smaller than it should be. A pragmatic solution is to count for how many $j$'s $\lambda^j$ is above some threshold (e.g. $10^{-6}$) and then use this number instead of $N$. This was implemented and a new set of confidence intervals was calculated. The result is shown in figure~\ref{fig:local-trend-model-adjusted} and now the confidence interval seems much more plausible.
+The problem with this approach is that for most values of $j$, $\lambda^j$ is smaller than machine precision and therefore only a small number of the $N$ observations are included in the calculation. But from the formula above it is seen that we still divide by $N-p$ so $\widehat{\sigma}^2$ becomes smaller than it should be. A pragmatic solution is to count for how many $j$'s $\lambda^j$ is above some threshold (e.g. $10^{-6}$) and then use this number instead of $N$. This was implemented\footnote{See the function \myverb{calc.sigmahat} in the file \myverb{local-trend-functions.R} shown in the appendices} and a new set of confidence intervals was calculated. The result is shown in figure~\ref{fig:local-trend-model-adjusted} and now the confidence interval seems more plausible.
 
 \begin{figure}
     \centering
     \includegraphics[width=100mm]{local-trend-predict-adjusted-6.pdf}
-    \caption{Plot of simple linear model}
+    \caption{Plot of local trend model with $\lambda=0.6$. With correction for small values of $\lambda$ in the calculation of $\widehat{\sigma}^2$}
     \label{fig:local-trend-model-adjusted}
 \end{figure}
 
 
 \subsection*{Selecting $\lambda$}
-The model seems to be useful but in the previous subsection $\lambda$ was randomly chosen as 0.6. It now needs to be determined what value of $\lambda$ fits the data best. Therefore the one-step prediction errors (see eq. 3.78 and 3.79 in \cite{hm}) are calculated for various lambda values and the result is shown in figure~\ref{fig:prediction-errors}.
+The model seems to be useful but in the previous subsection $\lambda$ was randomly chosen as 0.6. It now needs to be determined what value of $\lambda$ fits the data best. One way to define ``best'', is to find the $\lambda$ that minimizes the sum of squares of the one step prediction error (see eq. 3.78 and 3.79 in \cite{hm}). This was implemented and the result is shown in figure~\ref{fig:prediction-errors}.
 
 \begin{figure}
     \centering
     \includegraphics[width=100mm]{prediction-errors.pdf}
-    \caption{Plot of simple linear model}
+    \caption{One step prediction errors as function of $\lambda$ in the local trend model}
     \label{fig:prediction-errors}
 \end{figure}
 
-\subsection*{Final model}
-The local trend model is now estimated for $\lambda=0.37$ and predictions and confidence intervals are calculated. The result is shown in figure~\ref{fig:trend-model-adjusted-37}
+
+\subsection*{Final model and predictions}
+The local trend model is now estimated for $\lambda=0.37$ and predictions and confidence intervals are calculated. A plot of the result is shown in figure~\ref{fig:local-trend-model-adjusted-37} and a table with the six predictions can be found in table~\ref{tbl:predictions}.\par
+
+% latex table generated in R 2.10.1 by xtable 1.5-6 package
+% Fri Sep 30 04:49:01 2011
+\begin{table}[ht]
+    \begin{center}
+    \begin{tabular}{rrl}
+      \hline
+     & FPI prediction & 95\% interval \\ 
+      \hline
+    January 2005 & $148.40\pm 1.39$ & [147.01, 149.80] \\ 
+      February 2005 & $148.74\pm 1.59$ & [147.15, 150.34] \\ 
+      March 2005 & $149.09\pm 1.83$ & [147.26, 150.91] \\ 
+      April 2005 & $149.43\pm 2.08$ & [147.34, 151.51] \\ 
+      May 2005 & $149.77\pm 2.36$ & [147.41, 152.12] \\ 
+      June 2005 & $150.11\pm 2.64$ & [147.47, 152.74] \\ 
+       \hline
+    \end{tabular}
+    \end{center}
+    \caption{Predictions for the \fpi\ in the first half of 2005 with confidence intervals}\label{tbl:predictions}
+\end{table}
+
+As can be seen by the plot the variance of the prediction of January 2005 is now lower than the model with $\lambda=0.6$. On the other hand the variance of predictions in later 2005 becomes larger in the final model, than in the model with $\lambda=0.6$. This is either an error in the implementation or an effect of how $\lambda$ affects the prediction variance. If it is an effect of $\lambda$ you could argue that $\lambda=0.37$ isn't necessarily the best choice since we are going to make predictions for six future months. \par
+On a higher level you could argue that the model doesn't really capture the essence of the data. Looking at the raw data a more proper model would maybe be a combination of a linear trend and sinusoidal functions to capture the wave structure in the data.\par
 
 \begin{figure}
     \centering
     \includegraphics[width=100mm]{local-trend-predict-adjusted-37.pdf}
-    \caption{Plot of simple linear model}
+    \caption{Plot of local trend model with $\lambda=0.37$. With correction for small values of $\lambda$ in the calculation of $\widehat{\sigma}^2$}
     \label{fig:local-trend-model-adjusted-37}
 \end{figure}
 
@@ -227,7 +252,7 @@ The local trend model is now estimated for $\lambda=0.37$ and predictions and co
 \pagebreak
 
 \section*{Appendices}
-All R code used for this assignment are included here. All source code incl. latex code for this report can be found at \url{http://github.com/alphabits/dtu-fall-2011/}
+All R code used for this assignment are included here. All source code incl. latex code for this report can be found at {\small\url{https://github.com/alphabits/dtu-fall-2011/tree/master/02417/assignment-1}}
 \subsection*{Loading data (loaddata.R)}
 \lstinputlisting{loaddata.R}
 \subsection*{Data plot (ex-1.R)}

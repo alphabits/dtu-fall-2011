@@ -1,7 +1,6 @@
-# Load data in variables rtime and fpi
 source('loaddata.R')
 
-lambda <- 0.7
+lambda <- 0.8
 N <- length(fpi)
 const <- (1-lambda)
 last.measure <- fpi[N]
@@ -20,10 +19,12 @@ for (i in 2:num.predictions) {
 }
 
 ind <- rtime > 2001
+
 pdf(sprintf('exp-smoothing-lambda-%s.pdf', strsplit(as.character(lambda), "\\.")[[1]][2]))
-plot(c(rtime[ind], pred.time), c(fpi[ind], preds), pch=pch, cex=cex,
-     main=expression(paste("Prediction using exponential smoothing with ", lambda==0.7)),
+plot(c(rtime[ind], pred.time), c(fpi[ind], preds), pch=pch, cex=cex, col=col.normal,
+     main="Prediction using exponential smoothing",
      xlab="Year",
      ylab="FPI")
 points(pred.time, preds, pch=pch, cex=cex.pred, col=col.pred)
+legend("topleft", expression(lambda==0.8), inset=0.05)
 dev.off()

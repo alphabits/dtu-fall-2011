@@ -2,8 +2,8 @@
 %Å‚Å„ÅœÅ”\r
 1 0 obj
 <<
-/CreationDate (D:20110929221359)
-/ModDate (D:20110929221359)
+/CreationDate (D:20110930102300)
+/ModDate (D:20110930102300)
 /Title (R Graphics Output)
 /Producer (R 2.10.1)
 /Creator (R)
@@ -30,8 +30,8 @@ endobj
 stream
 q
 Q q 59.04 73.44 414.72 371.52 re W n
-0.000 0.000 0.000 rg
-0.000 0.000 0.000 RG
+0.663 0.663 0.663 rg
+0.663 0.663 0.663 RG
 0.75 w
 [] 0 d
 1 J
@@ -262,16 +262,7 @@ S
 Q q
 BT
 0.000 0.000 0.000 rg
-/F2 1 Tf 14.00 0.00 -0.00 14.00 107.84 470.85 Tm [(Prediction using e) 30 (xponential smoothing with )] TJ
-ET
-BT
-/F6 1 Tf 14.00 0.00 -0.00 14.00 383.65 470.85 Tm (l) Tj
-ET
-BT
-/F6 1 Tf 14.00 0.00 -0.00 14.00 394.58 470.85 Tm (=) Tj
-ET
-BT
-/F2 1 Tf 14.00 0.00 -0.00 14.00 405.50 470.85 Tm (0.2) Tj
+/F3 1 Tf 14.00 0.00 -0.00 14.00 133.09 469.45 Tm [(Prediction using e) 15 (xponential smoothing)] TJ
 ET
 BT
 /F2 1 Tf 12.00 0.00 -0.00 12.00 254.57 18.72 Tm [(Y) 140 (ear)] TJ
@@ -280,36 +271,46 @@ BT
 /F2 1 Tf 0.00 12.00 -12.00 0.00 12.96 249.86 Tm (FPI) Tj
 ET
 Q q 59.04 73.44 414.72 371.52 re W n
-0.000 0.000 0.545 rg
-0.000 0.000 0.545 RG
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
 0.75 w
 [] 0 d
 1 J
 1 j
 10.00 M
 BT
-/F1 1 Tf 2 Tr 6.48 0 0 6.48 419.61 395.33 Tm (l) Tj 0 Tr
+/F1 1 Tf 2 Tr 3.49 0 0 3.49 420.79 396.37 Tm (l) Tj 0 Tr
 ET
 BT
-/F1 1 Tf 2 Tr 6.48 0 0 6.48 426.85 396.55 Tm (l) Tj 0 Tr
+/F1 1 Tf 2 Tr 3.49 0 0 3.49 428.04 397.59 Tm (l) Tj 0 Tr
 ET
 BT
-/F1 1 Tf 2 Tr 6.48 0 0 6.48 434.10 396.80 Tm (l) Tj 0 Tr
+/F1 1 Tf 2 Tr 3.49 0 0 3.49 435.28 397.84 Tm (l) Tj 0 Tr
 ET
 BT
-/F1 1 Tf 2 Tr 6.48 0 0 6.48 441.34 396.85 Tm (l) Tj 0 Tr
+/F1 1 Tf 2 Tr 3.49 0 0 3.49 442.53 397.89 Tm (l) Tj 0 Tr
 ET
 BT
-/F1 1 Tf 2 Tr 6.48 0 0 6.48 448.59 396.86 Tm (l) Tj 0 Tr
+/F1 1 Tf 2 Tr 3.49 0 0 3.49 449.77 397.90 Tm (l) Tj 0 Tr
 ET
 BT
-/F1 1 Tf 2 Tr 6.48 0 0 6.48 455.83 396.86 Tm (l) Tj 0 Tr
+/F1 1 Tf 2 Tr 3.49 0 0 3.49 457.02 397.90 Tm (l) Tj 0 Tr
+ET
+79.78 426.38 62.41 -28.80 re S
+BT
+/F6 1 Tf 12.00 0.00 -0.00 12.00 101.38 407.66 Tm (l) Tj
+ET
+BT
+/F6 1 Tf 12.00 0.00 -0.00 12.00 110.74 407.66 Tm (=) Tj
+ET
+BT
+/F2 1 Tf 12.00 0.00 -0.00 12.00 120.11 407.66 Tm (0.2) Tj
 ET
 Q
 endstream
 endobj
 7 0 obj
-5718
+5743
 endobj
 3 0 obj
 <<
@@ -324,7 +325,7 @@ endobj
 4 0 obj
 <<
 /ProcSet [/PDF /Text]
-/Font << /F1 9 0 R /F2 10 0 R /F6 11 0 R >>
+/Font << /F1 9 0 R /F2 10 0 R /F3 11 0 R /F6 12 0 R >>
 /ExtGState << >>
 >>
 endobj
@@ -355,29 +356,37 @@ endobj
 11 0 obj <<
 /Type /Font
 /Subtype /Type1
+/Name /F3
+/BaseFont /Helvetica-Bold
+/Encoding 8 0 R
+>> endobj
+12 0 obj <<
+/Type /Font
+/Subtype /Type1
 /Name /F6
 /BaseFont /Symbol
 >> endobj
 xref
-0 12
+0 13
 0000000000 65535 f 
 0000000021 00000 n 
 0000000164 00000 n 
-0000006084 00000 n 
-0000006167 00000 n 
+0000006109 00000 n 
+0000006192 00000 n 
 0000000213 00000 n 
 0000000293 00000 n 
-0000006064 00000 n 
-0000006271 00000 n 
-0000006528 00000 n 
-0000006611 00000 n 
-0000006708 00000 n 
+0000006089 00000 n 
+0000006307 00000 n 
+0000006564 00000 n 
+0000006647 00000 n 
+0000006744 00000 n 
+0000006846 00000 n 
 trailer
 <<
-/Size 12
+/Size 13
 /Info 1 0 R
 /Root 2 0 R
 >>
 startxref
-6786
+6924
 %%EOF
