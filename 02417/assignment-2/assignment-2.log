@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  13 OCT 2011 22:39
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  14 OCT 2011 19:02
 entering extended mode
  %&-line parsing enabled.
 **assignment-2.tex
@@ -661,20 +661,7 @@ Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
 \tymin=\dimen162
 \tymax=\dimen163
 \TY@tablewidth=\dimen164
-)) (./assignment-2.aux
-
-LaTeX Warning: Label `fig:one' multiply defined.
-
-
-LaTeX Warning: Label `fig:one' multiply defined.
-
-
-LaTeX Warning: Label `fig:one' multiply defined.
-
-
-LaTeX Warning: Label `fig:one' multiply defined.
-
-)
+)) (./assignment-2.aux)
 \openout1 = `assignment-2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -803,151 +790,469 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Reference `fig:stationary-set' on page 2 undefined on input line
- 74.
-
-
-LaTeX Warning: Reference `fig:damped-harmonic-set' on page 2 undefined on input
- line 80.
-
+<part1-stationary.pdf, id=16, 505.89pt x 505.89pt>
+File: part1-stationary.pdf Graphic file (type pdf)
+ <use part1-stationary.pdf>
+<part1-damping.pdf, id=17, 505.89pt x 505.89pt>
+File: part1-damping.pdf Graphic file (type pdf)
+ <use part1-damping.pdf>
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] [3]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 126.
- (/usr/share/texmf-texlive/tex/latex/bera/t1fvm.fd
+[2] [3 <./part1-stationary.pdf>] [4 <./part1-damping.pdf>]
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 140.
+
+(/usr/share/texmf-texlive/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 126.
+(Font)              scaled to size 8.09995pt on input line 140.
 
-<ar1-filter-1.pdf, id=25, 867.24pt x 505.89pt>
+<ar1-filter-1.pdf, id=37, 867.24pt x 505.89pt>
 File: ar1-filter-1.pdf Graphic file (type pdf)
  <use ar1-filter-1.pdf>
-<ar1-filter-2.pdf, id=26, 867.24pt x 505.89pt>
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <9> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 151.
+LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 151.
+
+<ar1-filter-2.pdf, id=38, 867.24pt x 505.89pt>
 File: ar1-filter-2.pdf Graphic file (type pdf)
  <use ar1-filter-2.pdf>
-<ar1-filter-3.pdf, id=27, 867.24pt x 505.89pt>
+<ar1-filter-3.pdf, id=39, 867.24pt x 505.89pt>
 File: ar1-filter-3.pdf Graphic file (type pdf)
  <use ar1-filter-3.pdf>
-<ar2-filter-1.pdf, id=28, 867.24pt x 505.89pt>
+<ar2-filter-1.pdf, id=40, 867.24pt x 505.89pt>
 File: ar2-filter-1.pdf Graphic file (type pdf)
  <use ar2-filter-1.pdf>
-<ar2-sim-1.pdf, id=29, 867.24pt x 505.89pt>
+<ar2-sim-1.pdf, id=41, 867.24pt x 505.89pt>
 File: ar2-sim-1.pdf Graphic file (type pdf)
- <use ar2-sim-1.pdf> [4 <./ar1-filter-1.pdf>] [5 <./ar1-filter-2.pdf> <./ar1-fi
-lter-3.pdf>] [6 <./ar2-filter-1.pdf> <./ar2-sim-1.pdf>]
+ <use ar2-sim-1.pdf> [5] [6 <./ar1-filter-1.pdf> <./ar1-filter-2.pdf>] [7 <./ar
+1-filter-3.pdf> <./ar2-filter-1.pdf>] [8 <./ar2-sim-1.pdf>]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 167.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 167.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 167.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 167.
+(Font)              scaled to size 7.19995pt on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+(./part3.R)
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+
+Package xcolor Warning: Incompatible color definition on input line 213.
+
+<random-walk.pdf, id=78, 578.16pt x 650.43pt>
+File: random-walk.pdf Graphic file (type pdf)
+ <use random-walk.pdf>
+<multiple-random-walk.pdf, id=79, 505.89pt x 505.89pt>
+File: multiple-random-walk.pdf Graphic file (type pdf)
+
+<use multiple-random-walk.pdf>
+<random-walk-diffed.pdf, id=80, 578.16pt x 650.43pt>
+File: random-walk-diffed.pdf Graphic file (type pdf)
+
+<use random-walk-diffed.pdf>
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 255.
+
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 255.
+ [9]
+[10 <./random-walk.pdf> <./multiple-random-walk.pdf>] [11 <./random-walk-diffed
+.pdf>] <seasonalmodels-1.pdf, id=103, 867.24pt x 505.89pt>
+File: seasonalmodels-1.pdf Graphic file (type pdf)
+
+<use seasonalmodels-1.pdf> <seasonalmodels-2.pdf, id=104, 867.24pt x 505.89pt>
+File: seasonalmodels-2.pdf Graphic file (type pdf)
+
+<use seasonalmodels-2.pdf> [12] [13 <./seasonalmodels-1.pdf> <./seasonalmodels-
+2.pdf>]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 169.
+(Font)              scaled to size 8.99994pt on input line 308.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 308.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 308.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 308.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 310.
+
+(./part1.R)
+
+Package xcolor Warning: Incompatible color definition on input line 310.
+
+
+Package xcolor Warning: Incompatible color definition on input line 310.
+
+
+Package xcolor Warning: Incompatible color definition on input line 310.
+
+
+Package xcolor Warning: Incompatible color definition on input line 310.
+
+
+Package xcolor Warning: Incompatible color definition on input line 310.
+
+
+Package xcolor Warning: Incompatible color definition on input line 310.
+
+
+Package xcolor Warning: Incompatible color definition on input line 310.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+(./ex2.R)
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+
+Package xcolor Warning: Incompatible color definition on input line 312.
+
+[14]
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
+
+
+Package xcolor Warning: Incompatible color definition on input line 315.
 
 (./part2.R
 LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <8> not available
-(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 25.
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 6.
 LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
-(Font)              scaled to size 7.19995pt on input line 25.
- [7])
+(Font)              scaled to size 7.19995pt on input line 6.
+ [15])
 
-Package xcolor Warning: Incompatible color definition on input line 169.
-
-
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 315.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 315.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 315.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 315.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
+Package xcolor Warning: Incompatible color definition on input line 315.
 
 
-Package xcolor Warning: Incompatible color definition on input line 169.
-
-(../footer.tex) [8] (./assignment-2.aux)
-
-LaTeX Warning: There were undefined references.
+Package xcolor Warning: Incompatible color definition on input line 315.
 
 
-LaTeX Warning: There were multiply-defined labels.
+Package xcolor Warning: Incompatible color definition on input line 315.
 
- ) 
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+(./part3.R [16])
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 317.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+(./part4.R [17])
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+
+Package xcolor Warning: Incompatible color definition on input line 319.
+
+[18] (../footer.tex) [19] (./assignment-2.aux) ) 
 Here is how much of TeX's memory you used:
- 9197 strings out of 493848
- 116326 string characters out of 1152824
- 268522 words of memory out of 3000000
- 12261 multiletter control sequences out of 15000+50000
- 77757 words of font info for 80 fonts, out of 3000000 for 9000
+ 9320 strings out of 493848
+ 118125 string characters out of 1152824
+ 277534 words of memory out of 3000000
+ 12358 multiletter control sequences out of 15000+50000
+ 82675 words of font info for 83 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,12n,43p,591b,2408s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts
-/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/us
-r/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm
-/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</home/anders
-/texmf/fonts/type1/public/bera/fvmr8a.pfb></home/anders/texmf/fonts/type1/publi
-c/bera/fvmro8a.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/font
-s/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on assignment-2.pdf (8 pages, 339424 bytes).
+ 38i,12n,43p,1135b,1733s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvi
+ps/lm/lm-ec.enc}{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}{/usr/sha
+re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
+lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/
+fonts/enc/dvips/lm/lm-mathit.enc}</home/anders/texmf/fonts/type1/public/bera/fv
+mr8a.pfb></home/anders/texmf/fonts/type1/public/bera/fvmro8a.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+bx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+sy8.pfb>
+Output written on assignment-2.pdf (19 pages, 871087 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
+ 194 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

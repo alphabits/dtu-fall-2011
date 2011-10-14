@@ -2,6 +2,11 @@ numpoints = 1500
 e = rnorm(numpoints)
 ind.to.include = (numpoints-249):numpoints
 
+
+#############################################
+# Make common interface for all simulations #
+#############################################
+
 my.filter = function (coeffs) {
     ts(filter(e, filter=coeffs, method="recursive")[ind.to.include])
 }
@@ -21,6 +26,7 @@ sim = function (simfns, coeffs) {
     }
     return(list(ys=ys, acfs=acfs, coeffs=coeffs))
 }
+
 
 ###################
 # AR(1) processes #
@@ -66,7 +72,7 @@ plot.timeseries = function (series, acfs, coeffs) {
             coeff.text = paste(coeff.text, ", a2 =", cs[2])
         }
         plot(series[[ci]], ylab="Y", 
-             main=paste("Tids series", coeff.text))
+             main=paste("Time series", coeff.text))
         plot(acfs[[ci]], main=paste("ACF", coeff.text))
     }
 }
