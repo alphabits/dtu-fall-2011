@@ -2,17 +2,23 @@ addpath('/home/anders/dtu/E11/02610/src/immoptibox');
 
 data = load('optic.dat');
 
-degrees = 1:9;
-
-fit = @(n){polyfit(data(:,1), data(:,2), n)};
-coeffs = arrayfun(fit, degrees);
+degrees = 1:6;
+fs = 14;
 
 for i=degrees
-    subplot(3, 3, i);
-    xs = linspace(0, 40, 200);
-    ys = polyval(coeffs{i}, xs);
+    coeffs = polyfit(data(:,1), data(:,2), i)
+    xs = linspace(0, 35, 200);
+    ys = polyval(coeffs, xs);
+    plot(data(:, 1), data(:, 2), 'r.', 'MarkerSize', 6);
     hold on;
-    plot(data(:, 1), data(:, 2), 'ro');
-    plot(xs, ys, 'linewidth', 3)
+    plot(xs, ys, 'linewidth', 2)
+    xlabel('msec', 'fontsize', fs); ylabel('Light intensity', 'fontsize', fs);
+    xlim([0 35]);
+    title(sprintf('Fitted polynomial of degree %d', i), 'fontsize', fs);
+    set(gca, 'fontsize', fs);
+    a = get(gca, 'DataAspectRatio');
+    set(gca, 'DataAspectRatio', a.*[1 2 1]);
+    grid on;
+    saveeps(sprintf('fitted-polynomial-%d.eps', i));
     hold off;
 end

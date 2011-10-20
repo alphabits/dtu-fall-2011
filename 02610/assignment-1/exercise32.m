@@ -1,43 +1,70 @@
-function [xmin] = exercise32()
-    data = load('optic.dat');
+addpath('/home/anders/dtu/E11/02610/src/immoptibox');
 
-    t = data(:, 1);
-    y = data(:, 2);
+data = load('optic.dat');
 
-    M_1 = @(x, t)x(2)*exp(-x(1).*t)+x(3);
-    M_2 = @(x, t)x(3)*exp(-x(1).*t)+x(4)*exp(-x(2).*t)+x(5);
+t = data(:, 1);
+y = data(:, 2);
 
-    function [jac] = jacobian_1(x, t)
-        jac = [-x(2)*t*exp(-x(1)*t) exp(-x(1)*t) 1];
-    end
+% Choose between model 1 or 2.
+model = 2;
 
-    function [jac] = jacobian_2(x, t)
-        jac = [-x(3)*t*exp(-x(1)*t) -x(4)*t*exp(-x(2)*t) exp(-x(1)*t) exp(-x(2)*t) 1];
-    end
-
-    function [r, J] = residual_jacobian(x, f, jac, data_t, data_y)
-        r = f(x, data_t) - data_y;
-        J = zeros(length(data_t), length(x));
-        for i=1:length(data_t)
-            J(i, :) = jac(x, data_t(i));
-        end
-    end 
-
-    M = M_1;
-    jaco = @jacobian_1;
-    %x0 = [0.2, 0.2, 8, 8, -1];
-    x0 = [0.25, 19, -1];
-
-    xmin = marquardt(@residual_jacobian, x0, [], M, jaco, t, y);
-    r = residual_jacobian(xmin, M, jaco, t, y);
-  
-    subplot(1, 2, 1);
-    hold on;
-    plot(t, y, 'ro');
-    t = linspace(0, 40, 200);
-    plot(t, M(xmin, t), 'linewidth', 3);
-    hold off;
-
-    subplot(1, 2, 2);
-    plot(t, r, 'ro');
+if model == 1
+    x0 = [0.2, 18, -1];
+    res_jac = @residual_jacobian_M1;
+    M = @M1;
+else
+    x0 = [0.2, 0.2, 8, 8, -1];
+    res_jac = @residual_jacobian_M2;
+    M = @M2;
 end
+
+%[maxJ, err, ind] = checkgrad(res_jac, x0, 1e-5, t, y);
+
+[xs, info, perf] = marquardt(res_jac, x0, [0 1e-7 1e-12 0], t, y);
+
+xmin = xs(:,end);
+
+tbldata = {perf.ng, perf.f};
+tbldatafilenames = {sprintf('gradient-norm-model-%d.tex', model), ...
+                    sprintf('function-values-model-%d.tex', model)};
+
+% Save results as latex tables
+for i=1:2
+    tmpdata = tbldata{i};
+    num = length(tmpdata); 
+    tosave = 1:num;
+    file = fopen(tbldatafilenames{i}, 'w');
+    fprintf(file, '%d & %.2e \\\\ \n', [tosave; tmpdata(tosave)]);
+    fclose(file);
+end
+
+% Calculate residuals
+r = res_jac(xmin, t, y);
+
+% Define string representation of model
+if model == 1
+    modelstr = sprintf('M_1^*(t) = %.02fe^{%.02ft} %+.02f', ...
+                        xmin(2), -xmin(1), xmin(3));
+else
+    modelstr = sprintf('M_2^*(t) = %.02fe^{%.02ft} %+.02fe^{%.02ft} %+.02f', ...
+                        xmin(3), -xmin(1), xmin(4), -xmin(2), xmin(5));
+end
+
+% Save string representation for latex report
+fid = fopen(sprintf('model-%d-representation.tex', model), 'w');
+fwrite(fid, modelstr);
+fclose(fid);
+
+% Plot the fitted model and the data set
+newt = linspace(0, 35, 200);
+plot(t, y, 'k.', newt, M(xmin, newt), 'linewidth', 2);
+title(['Fitted model: ' modelstr], 'fontsize', 14);
+set(gca, 'fontsize', 14);
+grid on;
+saveeps(sprintf('least-squares-model-%d.eps', model));
+
+% Plot the residuals 
+plot(t, r, 'k.', 'MarkerSize', 10);
+title(['Residuals of fitted model: ' modelstr], 'fontsize', 14);
+set(gca, 'fontsize', 14);
+saveeps(sprintf('least-squares-model-%d-res.eps', model));
