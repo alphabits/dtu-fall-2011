@@ -6,7 +6,7 @@ t = data(:, 1);
 y = data(:, 2);
 
 % Choose between model 1 or 2.
-model = 2;
+model = 1;
 
 if model == 1
     x0 = [0.2, 18, -1];
@@ -18,18 +18,26 @@ else
     M = @M2;
 end
 
-%[maxJ, err, ind] = checkgrad(res_jac, x0, 1e-5, t, y);
-
 [xs, info, perf] = marquardt(res_jac, x0, [0 1e-7 1e-12 0], t, y);
 
 xmin = xs(:,end);
 
-tbldata = {perf.ng, perf.f};
-tbldatafilenames = {sprintf('gradient-norm-model-%d.tex', model), ...
-                    sprintf('function-values-model-%d.tex', model)};
+% Plot gradient as function of iteration number
+set(gca, 'fontsize', 16);
+semilogy(perf.ng, 'r^', 'markersize', 8, 'linewidth', 2);
+titlestr = sprintf('Gradient size for model M_%d (Levenberg-Marquardt)', model);
+title(titlestr, 'fontsize', 16);
+xlabel('Iteration no.'); ylabel('Norm of gradient'); 
+saveeps(sprintf('least-squares-convergence-model-%d.eps', model));
 
 % Save results as latex tables
-for i=1:2
+xerr = xs - repmat(xmin, 1, size(xs,2));
+xerr_norms = sqrt(xerr(1,:).^2 + xerr(2,:).^2 + xerr(3,:));
+tbldata = {perf.ng, perf.f, xerr_norms};
+tbldatafilenames = {sprintf('gradient-norm-model-%d.tex', model), ...
+                    sprintf('function-values-model-%d.tex', model), ...
+                    sprintf('xerror-model-%d.tex', model)};
+for i=1:3
     tmpdata = tbldata{i};
     num = length(tmpdata); 
     tosave = 1:num;

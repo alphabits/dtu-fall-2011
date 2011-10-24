@@ -1,0 +1,55 @@
+function [xmin, X, F, DF, A] = gaussnewton(fcn, x0, opts)
+
+    % Define default options
+    defaultopts = struct( ...
+        'maxiter', 1000, ...
+        'tol', 1e-5, ...
+        'rho', 0.9, ...
+        'c', 1e-4 ...
+    );
+    % Overwrite default options with options given as input
+    opts = mergestructs(defaultopts, opts);
+
+    k = 0;
+    x = x0;
+    xmin = x0;
+
+    % Initialize function value, gradient and hessian
+    [r, J] = fcn(x);
+
+    function [f, df] = calc_f(x)
+        [r, J] = fcn(x);
+        f = (r'*r)/2;
+        df = J'*r;
+    end
+
+    [f, df] = calc_f(x);
+
+    X = [x0]; F = [f]; DF = [df]; A = [];
+
+    converged = (norm(df,'inf') < opts.tol);
+
+    while ~converged && k < opts.maxiter
+        % Determine search direction
+        [Q, R] = qr(J, 0);
+        pk = R\(Q'*r);
+
+        % Find step length and update x
+        a = backtracking(@calc_f, x, pk, f, df, opts.rho, opts.c);
+        x = x + a*pk;
+        
+        % Update function value, gradient and hessian
+        [r, J] = fcn(x);
+        [f, df] = calc_f(x);
+        
+        converged = (norm(df,'inf') < opts.tol);
+
+        if (converged) xmin = x; else xmin = []; end
+
+        k = k + 1;
+
+        % Update history matrices
+        A = [A, a]; X = [X,x]; F = [F,f]; DF = [DF,df];
+    end
+
+end

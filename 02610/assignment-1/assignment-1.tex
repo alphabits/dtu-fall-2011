@@ -21,8 +21,9 @@ and the function $f$ is then defined as
 \subsection*{Question 1.1}
 Since the function $f$ is defined as the sum of two squared values we have that $f(\myvec{x})\geq 0$ for all $\myvec{x}\in\myreal^2$ and only for $r_1(\myvec{x})=r_2(\myvec{x})=0$ is $f(\myvec{x})=0$. From this it is seen that any solution of $\myvec{r}(\myvec{x})=\myvec{0}$ is also a minimizer of $f$.
 
+
 \subsection*{Question 1.2}
-A contour plot of $\log_{10}(f(\myvec{x}))$ for $\myvec{x}\in[-10;10]\times[-10;10]$ is plotted and shown in figure~\ref{fig:q12}
+A contour plot of $\log_{10}(f(\myvec{x}))$ for $\myvec{x}\in[-10;10]\times[-10;10]$ is plotted and shown in figure~\ref{fig:q12}. The source code is found in \appref{ex-1.2}
 \begin{figure}
     \centering
     \includegraphics[width=90mm]{q12-crop.pdf}
@@ -35,9 +36,10 @@ A contour plot of $\log_{10}(f(\myvec{x}))$ for $\myvec{x}\in[-10;10]\times[-10;
 \section*{Question 2 - Newton's Method}
 \subsection*{Question 2.1}
 First an \textsc{Matlab} implementation of Newton's method is created.
-\lstinputlisting[caption={Implementation of Newton's method},label=lst:newton,language=Matlab]{Newton.m}
+\lstinputlisting[caption={Implementation of Newton's method},label=lst:newton,language=Matlab]{newton.m}
 
 \subsection*{Question 2.2}
+\textit{Source code for this question is in \appref{ex-2.2}}. \\
 The implementation is tested on the quadratic function $f(\myvec{x}) = \half\myvec{x}^T\myvec{Ax} + \myvec{b}^T\myvec{x}$ where
 \begin{equation*}
     \myvec{A} = \begin{pmatrix}
@@ -62,9 +64,10 @@ Using the implementation of Newton's method we find the same minimizer as the an
     \vecA\vecx^{(1)} + \vecA\vecx^{(0)} + \myvec{b} &= \vecA\vecx^{(0)} \myimp\\
     \vecx^{(1)} &= -\vecA^{-1}\myvec{b}
 \end{align*}
-so $\vecx^*=\vecx^{(1)}$ for the quadratic function $f$.
+so $\vecx^*=\vecx^{(1)}$ for the quadratic function $f$. 
 
 \subsection*{Question 2.3}
+\textit{Source code for this question is in \appref{ex-2.3}}. \\
 Now the implementation of Newton's method is tested\footnote{Using a tolerance of $10^{-12}$ and a maximum of 1000 iterations.} on $f$ -- as defined in (\ref{eq:braninsq}) -- for four different starting guesses: $\vecx^{(0)}_{1}=(0,0)^T, \vecx^{(0)}_{2}=(1,0)^T, \vecx^{(0)}_{3}=(3.9, -1)^T, \vecx^{(0)}_{4}=(4.1, -1)^T$. The results are shown in figure~\ref{fig:newton-test}. For the first three starting guesses the algorithm converges within the first 10 iterations giving the minimizers
 \begin{equation*}
     \vecx_1^{(8)} = \begin{pmatrix}
@@ -111,7 +114,8 @@ Which shows that $\vecx_1^{(8)}$ is a solution, but $\vecx_3^{(6)}$ and $\vecx_4
 In this question different function will be fitted to a dataset containing measurements of light intensity in a optical fibre as a function of time after source cut off.
 
 \subsection*{Question 3.1}
-First polynomials of degrees from 1 to 6 are fitted to the data using the \matlab\ function \myverb{polyfit}. The results are shown in figure~\ref{fig:gitted-polynomials} and from the figure it is seen that the fit can be improved for values inside the data interval, by raising the degree of the polynomial. This is as expected since we could make the polynomial fit the data exactly by choosing the degree equal to the number of datapoints minus one (as long as there aren't two measurements for the same $t$). Outside the data interval though the behaviour of the fitted polynomials do not behave as well since all polynomials makes a sharp upward or downward turn when $t>32$. This behaviour do not match the physical reality well, so instead of using polynomials, exponential functions are fitted instead.
+\textit{Source code for this question is in \appref{ex-3.1}}. \\
+First polynomials of degrees from 1 to 6 are fitted to the data using the \matlab\ function \myverb{polyfit}. The results are shown in figure~\ref{fig:fitted-polynomials} and from the figure it is seen that the fit can be improved for values inside the data interval, by raising the degree of the polynomial. This is as expected since we could make the polynomial fit the data exactly by choosing the degree equal to the number of datapoints minus one (as long as there aren't two measurements for the same $t$). Outside the data interval though the behaviour of the fitted polynomials do not behave as well since all polynomials makes a sharp upward or downward turn when $t>32$. This behaviour do not match the physical reality well, so instead of using polynomials, exponential functions are fitted instead.
 \begin{figure}
     \centering
     \mbox{\subfigure{\includegraphics[width=70mm]{fitted-polynomial-1.pdf}} \quad \subfigure{\includegraphics[width=70mm]{fitted-polynomial-2.pdf}}}
@@ -122,6 +126,7 @@ First polynomials of degrees from 1 to 6 are fitted to the data using the \matla
 \end{figure}
 
 \subsection*{Question 3.2}
+\textit{Source code for this question is in \appref{ex-3.2}}. \\
 Now the data $\{(t_i, y_i)\}_{i=1}^m$ is fitted by the model
 \begin{equation}\label{eq:model1}
     M(x, t) = x_2 e^{-x_1t} + x_3
@@ -133,7 +138,7 @@ The actual model is defined in a separate function \myverb{M1} since it is going
 \begin{lstlisting}
 [maxJ, err, ind] = checkgrad(@residual_jacobian_M1, x0, 1e-5, t, y);
 \end{lstlisting}
-The function returns the maximum value $J_m$ of the calculated jacobian, the maximum error of the forward- ($\delta_F$), backward- ($\delta_B$), and extrapolated difference approximations and the indicies of where the maximum difference approximation errors was obtained. If the jacobian was correctly implemented it should be expected that $\delta^B\simeq\half\delta^F$ and that $\delta^E$ should be of the order of magnitude $\simeq(\delta^F)^2$ REFERENCE!!!. The actual results was
+The function returns the maximum value $J_m$ of the calculated jacobian, the maximum error of the forward- ($\delta_F$), backward- ($\delta_B$), and extrapolated difference approximations and the indicies of where the maximum difference approximation errors was obtained. If the jacobian was correctly implemented it should be expected that $\delta^B\simeq\half\delta^F$ and that $\delta^E$ should be of the order of magnitude $\simeq(\delta^F)^2$ (see [p.3]{nielsen00}). The actual results was
 \begin{equation*}
     \delta^F = 4.05\cdot10^{-5},\quad \delta^B = -2.03\cdot10^{-5},\quad \delta^E = -3.29\cdot10^{-10}
 \end{equation*}
@@ -151,31 +156,44 @@ Finally it is seen from the figure that approximately
 A decent starting guess will therefore be $\vecx^{(0)}=(0.2, 18, -1)^T$
 
 \subsection*{Question 3.4}
+\textit{Source code for this question is in \appref{ex-3.2}}. \\
 It is now time to fit the model (\ref{eq:model1}) using the \myverb{marquardt} function from \myverb{immoptibox}. Using the start guess found in previous question the Levenberg-Marquardt method fits the model
 \begin{equation*}
     \input{model-1-representation}
 \end{equation*}
 to evaluate the model the fit is plotted along with the data. Also a plot of the residuals is created. Both plots can be seen in figure~\ref{fig:model1-plots}. From the plot of the fitted model the fit seems to be decent, but the model is seen to consistently give too high values for $t\in[2;6]$ and too low values for $t\in[6; 15]$. This is confirmed by the residuals plot where it is also seen that the model fits really bad for $t$ near 0. Also there seems to be some structure left in the residuals which shouldn't be there if the fit is perfect. \par
 Comparing the model with the polynomial models found earlier, it is seen that the polynomial models of degree 5 and 6 fitted the data better inside the data interval ($t\in[0; 32]$), but the exponential model behaves more plausible outside the data interval.\par
-COMMENT ON THE PERFORMANCE OF L-M!!!
+The Levenberg-Marquardt algorithm converged in 16 iterations and from table~\ref{tbl:marquardt-performance} it is seen that the convergence was superlinear for the last iterations. This corresponds with the theory as mentioned in \cite[p. 262]{nocedal06}.
 
 \begin{figure}
     \centering
     \mbox{\subfigure{\includegraphics[width=70mm]{least-squares-model-1.pdf}} \quad \subfigure{\includegraphics[width=70mm]{least-squares-model-1-res.pdf}}}
-    \caption{Plot of fitted model and residuals for model given by (\ref{eq:model1})}
+    \caption{Plot of fitted model and residuals for model $M_1$ given by (\ref{eq:model1})}
     \label{fig:model1-plots}
 \end{figure}
 
-\begin{tabular}{c c}
-    Iteration & $\norm{\nabla f}$ \\\hline
-    \input{gradient-norm-model-1}
-\end{tabular}
-\begin{tabular}{c c}
-    Iteration & $\norm{\nabla f}$ \\\hline
-    \input{function-values-model-1}
-\end{tabular}
+\begin{table}
+    \centering
+    \begin{tabular}{c c}
+        Iteration & $\norm{x_k - x_{16}}$ \\\hline
+        \input{xerror-model-1-trimmed}
+    \end{tabular}
+    \hspace{5mm}
+    \begin{tabular}{c c}
+        Iteration & $\norm{\nabla f}$ \\\hline
+        \input{gradient-norm-model-1-trimmed}
+    \end{tabular}
+    \hspace{5mm}
+    \begin{tabular}{c c}
+        Iteration & $f$ \\\hline
+        \input{function-values-model-1-trimmed}
+    \end{tabular}
+    \caption{$x$ errors, gradient norm and function values for last 6 iterations of the Levenberg-Marquardt algorithm for $M_1$}
+    \label{tbl:marquardt-performance}
+\end{table}
 
 \subsection*{Question 3.5}
+\textit{Source code for this question is in \appref{ex-3.2}}. \\
 Since the residuals of the previous model still showed some structure an extended model is now fitted. The model is given as
 \begin{equation}\label{eq:model2}
     M_2(x, t) = x_3 e^{-x_1t} + x_4 e^{-x_2 t} + x_5
@@ -203,5 +221,166 @@ From figure~\ref{fig:model2-plots} it is seen that the fit has improved overall 
 \section*{Question 4}
 
 \subsection*{Question 4.1}
+\textit{Source code for this question is in \appref{ex-4.1}}. \\
+In this question a line search algorithm based on steepest decent, newton's method and BFGS quasi-Newton is developed. Since the main logic in the three different methods are very much alike, all three methods are implemented in a single function called \myverb{linesearch}. The function spans more than one page when all comments are included so the code is found in \appref{ex-4.1}
+
+\subsection*{Question 4.2}
+Since all three algorithms implemented in the previous question are line search algorithms they share much of the same general structure. For the $k$'th iteration a search direction $p_k$ in the $x$-space is determined. When the direction has been chosen a step-length selection algorithm determines how large a step that should be taken in the chosen direction $p_k$. The differences between the algorithms are how they choose the search direction and how much information about the function $f$ that should be minimized they need to choose the direction.
+\subsubsection*{Steepest decent}
+In the steepest decent method the direction $p_k$ is chosen as the direction where the decrease in $f$ is largest pr. step length. This means that the direction is chosen as
+\begin{equation*}
+    p_k = -\nabla f_k
+\end{equation*}
+The primary advantage of the steepest decent method is that convergence to the real minimizer can be guarenteed as long as the step lengths satisfies the Wolfe conditions (see \cite[p.38-40]{nocedal06}). The main disadvantage is that only linear convergence is expected for all iterations \cite[p.29]{nielsen10}.
+
+\subsubsection*{Newton's method}
+In Newton's method the objective function $f$ is approximated by its 2nd order Taylor polynomial around the current iterate $x_k$. The next iterate is then chosen as the minimizer of the Taylor polynomial. As shown in \cite[p.44]{nielsen10} this gives the direction
+\begin{equation*}
+    p_k = -(\nabla^2 f_k)^{-1}\nabla f_k
+\end{equation*}
+This choice of direction is based on the assumption that the hessian isn't singular. Also the hessian must be positive definite to ensure that the algorithm converges towards a minimum. The advantage of the Newton method is that if the hessian is positive definite the algorithm converges quadratically for $x$ ``close'' to the minimizer (theorem 3.4 in \cite{nielsen10}). The disadvantages is that for many problems the hessian won't be positive definite. It may even be singular and then the direction isn't even defined. Also the information about the hessian may be expensive to calculate.
+
+\subsubsection*{BFGS Quasi-Newton}
+The Quasi-Newton method is an attempt to correct for the disadvantages of the Newton method. This is done by using an approximation $H_k$ of the inverse hessian $(\nabla^2 f_k)^{-1}$ giving the direction
+\begin{equation*}
+    p_k = -H_k \nabla f_k
+\end{equation*}
+For each iteration the approximate hessian is updated. The update formula is derived from the equation
+\begin{equation*}
+    H_{k+1}(\nabla f_{k+1} - \nabla f_k) = x_{k+1} - x_k
+\end{equation*}
+along with some extra conditions on $H_{k+1}$ to make the solution unique. The final update formula is given by e.g. equation 6.17 in \cite{nocedal06}.
+
+\subsubsection*{Step length selection}
+Common for all three algorithms described above is that they need to choose a step length when a direction has been determined. For the implementation in the previous question the simple backtracking algorithm on page 37 in \cite{nocedal06} was used. This algorithm satisfy the Wolfe conditions, by starting with a large step length and then decreasing the step length by a factor $\rho$ until the sufficient decrease condition (eq. 3.6a in \cite{nocedal06}) is satisfied.
+
+\subsection*{Question 4.3}
+\textit{Source code for this question is in \appref{ex-4.3}}. \\
+The algorithms are now tested on the Rosenbrock problem
+\begin{equation*}
+    \min_x f(x) = 100(x_2 - x_1^2)^2 + (1-x_1)^2
+\end{equation*}
+Since $f$ is the sum of two squared terms, $\min f(x) \geq 0$. From the second term it is then seen that $x_1=1$ and the first term then gives $x_2=1$. Therefore $x=(1,1)^T$ is the true minimizer of $f$. \par
+Now using respectively $x_1 = (-1.2, 1)^T$ and $x_2=(1.2, 1.2)^T$ as starting guesses, the three algorithms are tested on the Rosenbrock problem, and the convergence of the gradient norm is plotted along with the path taken in the $x$-plane. The results for starting point $x_1$ is seen in figure~\ref{fig:convergence-start1-my-impl} and the results for starting point $x_2$ in figure~\ref{fig:convergence-start2-my-impl}. For no of the starting points is the steepest descent algorithm able to converge within 1000 iterations. For both starting points the gradient of the steepest descent algorithm zig-zags in size and only very slowly converges toward 0. As already mentioned the gradient size will eventually converge but only very slowly. \par
+For both starting points the Newton method is seen to perform well. For $x_2$ the Newton method converges in just 8 iterations. This wasn't guaranteed since nothing in the implementation ensures that the hessian is positive definite. Not even regularity is checked for. It did work for $x_1$ and $x_2$ in Rosenbrocks problem though and with fast convergence. \par
+The Quasi-Newton method uses a little more than 21 iterations for both $x_1$ and $x_2$. The convergence of the gradient is slow in the start, but as the $x_k$ gets closer to the real minimum the convergence becomes super linear, just as expected. For both $x_1$ and $x_2$ it is seen that the first step of the Quasi-Newton method is equal to the first step of the steepest descent method. This is because the identity matrix is used as the initial approximation of the hessian which results in the first step being exactly the same as the steepest descent method.
+
+\begin{figure}
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{steepest-descent-start1.pdf}} \quad \subfigure{\includegraphics[width=70mm]{steepest-descent-start1-contour.pdf}}}
+    \mbox{\subfigure{\includegraphics[width=70mm]{newton-start1.pdf}} \quad \subfigure{\includegraphics[width=70mm]{newton-start1-contour.pdf}}}
+    \mbox{\subfigure{\includegraphics[width=70mm]{quasi-newton-start1.pdf}} \quad \subfigure{\includegraphics[width=70mm]{quasi-newton-start1-contour.pdf}}}
+    \caption{Performance and iteration path for starting point $x_1=(-1.2, 1)^T$ using the \myverb{linesearch} implementation}
+    \label{fig:convergence-start1-my-impl}
+\end{figure}
+\begin{figure}
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{steepest-descent-start2.pdf}} \quad \subfigure{\includegraphics[width=70mm]{steepest-descent-start2-contour.pdf}}}
+    \mbox{\subfigure{\includegraphics[width=70mm]{newton-start2.pdf}} \quad \subfigure{\includegraphics[width=70mm]{newton-start2-contour.pdf}}}
+    \mbox{\subfigure{\includegraphics[width=70mm]{quasi-newton-start2.pdf}} \quad \subfigure{\includegraphics[width=70mm]{quasi-newton-start2-contour.pdf}}}
+    \caption{Performance and iteration path for starting point $x_2=(1.2, 1.2)^T$ using the \myverb{linesearch} implementation}
+    \label{fig:convergence-start2-my-impl}
+\end{figure}
+
+
+\subsection*{Question 4.4}
+\textit{Source code for this question is in \appref{ex-4.4}}. \\
+The Rosenbrock problem is now solved using the built-in \matlab\ function \myverb{fminunc}. By tweaking the options for \myverb{fminunc} both the steepest descent method and the Quasi-Newton method can be calculated. The results are shown in figure~\ref{fig:convergence-start1-fminunc} and figure~\ref{fig:convergence-start2-fminunc}. \par
+As can be seen from the plots the steepest descent method start out by taking a much smaller step, compared with the implementation in the \myverb{linesearch} function from question 4.1. This is probably due to the different step-length algorithm used. In the \myverb{linesearch} implementation the simple backtracking algorithm (\cite[algorithm 3.1]{nocedal06}) was used and in the \myverb{fminunc} function a cubic interpolation algorithm was used. Due to the small first step size this version of the steepest descent is able to converge in around 850 iterations which is better than the \myverb{linesearch} implementation that wasn't able to converge in 1000 iterations. \par
+For starting point $x_1$ the \myverb{fminunc} implementation of the Quasi-Newton method performs much like the \myverb{linesearch} implementation. Due to the large difference in the first step size of the two implementations they approach the minimum from opposite directions in the alley. In this case it doesn't affect the performance though. For starting point 2 the \myverb{fminunc} Quasi-Newton method performs better. The difference between the \myverb{fminunc} and \myverb{linesearch} implementation, again seems to be the step length algorithm. In both step 1 and 2 the \myverb{linesearch} implementation takes a too large step and then it uses a couple of iterations to ``get back in the alley''.
+
+\begin{figure}[ht]
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{steepest-descent-start1-fminunc.pdf}} \quad \subfigure{\includegraphics[width=70mm]{steepest-descent-start1-fminunc-contour.pdf}}}
+    \mbox{\subfigure{\includegraphics[width=70mm]{quasi-newton-start1-fminunc.pdf}} \quad \subfigure{\includegraphics[width=70mm]{quasi-newton-start1-fminunc-contour.pdf}}}
+    \caption{Performance and iteration path for starting point $x_1=(-1.2, 1)^T$ using the \myverb{fminunc} function}
+    \label{fig:convergence-start1-fminunc}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{steepest-descent-start2-fminunc.pdf}} \quad \subfigure{\includegraphics[width=70mm]{steepest-descent-start2-fminunc-contour.pdf}}}
+    \mbox{\subfigure{\includegraphics[width=70mm]{quasi-newton-start2-fminunc.pdf}} \quad \subfigure{\includegraphics[width=70mm]{quasi-newton-start2-fminunc-contour.pdf}}}
+    \caption{Performance and iteration path for starting point $x_2=(1.2, 1.2)^T$ using the \myverb{fminunc} function}
+    \label{fig:convergence-start2-fminunc}
+\end{figure}
+
+\pagebreak
+
+\subsection*{Question 4.5}
+\textit{Source code for this question is in \appref{ex-4.5}}. \\
+The Rosenbrock problem is now formulated as a least squares problem. First the Rosenbrock function is written as
+\begin{equation*}
+    f(x) = (10(x_2 - x_1^2))^2 + (1 - x_1)^2
+\end{equation*}
+By defining
+\begin{equation*}
+    r_1(x) = 10(x_2 - x_1^2), \quad r_2(x) = 1 - x_1
+\end{equation*}
+the Rosenbrock function can be written
+\begin{equation*}
+    f(x) = \sum_{i=1}^2 r_i(x)^2
+\end{equation*}
+which is the form of the objective function of the least squares problem. The jacobian is the given by
+\begin{equation*}
+    J(x) = \begin{bmatrix}
+        -20\,x_1 & 10 \\
+        -1 & 0
+    \end{bmatrix}
+\end{equation*}
+A line search algorithm based on the Gauss-Newton approximation is now developed. This is just the Newton method where the hessian is approximated by using information for the jacobian $J$. Using the \myverb{linesearch} implementation from question 4.1 the Gauss-Newton method can be implemented as
+\lstinputlisting[caption={Implementation of Gauss-Newton method}]{gaussnewton.m}
+Using this implementation, the method is now tested on the Rosenbrock problem and the results are shown in figure~\ref{fig:convergence-gauss-newton}. The performance of the Gauss-Newton is seen to be really good for this problem. As mentioned in \cite[page. 257]{nocedal06} the convergence can be expected to be superlinear if the hessian approximation ($J^TJ$) is an good approximation. This seems to be the case for this problem and for starting point $x_2$ the Gauss-Newton algorithm converges in just 3 steps.
+
+\begin{figure}[ht]
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{gauss-newton-start1.pdf}} \quad \subfigure{\includegraphics[width=70mm]{gauss-newton-start1-contour.pdf}}}
+    \mbox{\subfigure{\includegraphics[width=70mm]{gauss-newton-start2.pdf}} \quad \subfigure{\includegraphics[width=70mm]{gauss-newton-start2-contour.pdf}}}
+    \caption{Performance and iteration path for the Gauss-Newton implementation}
+    \label{fig:convergence-gauss-newton}
+\end{figure}
+
+\section*{Conclusion}
+In this assignment a couple of line search algorithms have been implemented. The performance of the algorithms was compared and it was seen that the steepest descent method performed very bad on the Rosenbrock problem. The Newton method performed very well but the method can break down if the hessian isn't positive definite. For the Rosenbrock problem with the two starting point used there was no problems with the Newton method though. The Quasi-Newton BFGS method was also implemented, and it performed well on the Rosenbrock problem. \par
+In question 1 it was seen how a system of non-linear equations can be expressed as a least squares problem. Later it was also found that the Rosenbrock problem could be expressed as a least squares problem and this gave the opportunity to use the Gauss-Newton to solve the problem. In question 3 least squares was used for data fitting and the performance of the Levenberg-Marquardt algorithm was touched upon.
+
+\pagebreak
+\renewcommand\thesection{\Alph{section}}
+\section{Appendices}
+All \matlab\ source code is included in the appendices. All the source code including the LaTex code used for the report can also be found at \url{https://github.com/alphabits/dtu-fall-2011/tree/master/02610/assignment-1}.
+\subsection{Exercise 1.2}\label{app:ex-1.2}
+\lstinputlisting[caption={exercise12.m}]{exercise12.m}
+\subsection{Exercise 2.2}\label{app:ex-2.2}
+\lstinputlisting[caption={exercise22.m}]{exercise22.m}
+\subsection{Exercise 2.3}\label{app:ex-2.3}
+\lstinputlisting[caption={exercise23.m}]{exercise23.m}
+\subsection{Exercise 3.1}\label{app:ex-3.1}
+\lstinputlisting[caption={exercise3.m}]{exercise3.m}
+\subsection{Exercise 3.2-3.6}\label{app:ex-3.2}
+\lstinputlisting[caption={exercise32.m}]{exercise32.m}
+\lstinputlisting[caption={M1.m}]{M1.m}
+\lstinputlisting[caption={M2.m}]{M2.m}
+\lstinputlisting[caption={residual\_jacobian\_M1.m}]{residual_jacobian_M1.m}
+\lstinputlisting[caption={residual\_jacobian\_M2.m}]{residual_jacobian_M2.m}
+\subsection{Exercise 4.1}\label{app:ex-4.1}
+\lstinputlisting[caption={linesearch.m}]{linesearch.m}
+\lstinputlisting[caption={backtracking.m}]{backtracking.m}
+\lstinputlisting[caption={mergestructs.m}]{mergestructs.m}
+\subsection{Exercise 4.3}\label{app:ex-4.3}
+\lstinputlisting[caption={exercise43.m}]{exercise43.m}
+\lstinputlisting[caption={exercise43\_save.m}]{exercise43_save.m}
+\lstinputlisting[caption={rosenbrock.m}]{rosenbrock.m}
+\lstinputlisting[caption={plot\_rosenbrock\_convergence.m}]{plot_rosenbrock_convergence.m}
+\subsection{Exercise 4.4}\label{app:ex-4.4}
+\lstinputlisting[caption={exercise44.m}]{exercise44.m}
+\lstinputlisting[caption={exercise44\_save.m}]{exercise44_save.m}
+\subsection{Exercise 4.5}\label{app:ex-4.5}
+\lstinputlisting[caption={exercise45.m}]{exercise45.m}
+\lstinputlisting[caption={rosenbrock\_sq.m}]{rosenbrock_sq.m}
+\subsection{Helper function}
+\lstinputlisting[caption={saveeps.m}]{saveeps.m}
+
+\pagebreak
+\input{../footer}
 
 \end{document}

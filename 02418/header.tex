@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\linespread{1}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{array}
+\usepackage{amsmath,amssymb,latexsym,epic,eepic,epsfig,graphics,psfrag}
+\usepackage{amsfonts}
+\usepackage{graphicx,float}
+\usepackage{color}
+\definecolor{mygray}{RGB}{244,244,244}
+\definecolor{gray}{gray}{0.5}
+\definecolor{myredish}{RGB}{193,33,97}
+\definecolor{grayblue}{RGB}{91,112,142}
+\definecolor{myorange}{RGB}{255,134,0}
+\definecolor{green}{rgb}{0,0.4,0}
+
+\usepackage[english]{babel}
+
+\usepackage[bottom]{footmisc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\small\textit{\coursetitle -- Anders Hørsted (s082382)}}
+\rhead{\thepage}
+\chead{}
+\lfoot{}\cfoot{}\rfoot{}
+
+\usepackage{pstricks}
+\usepackage{pst-node}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{subfigure}
+%\usepackage{fouriernc}
+%\usepackage[charter]{mathdesign}
+\usepackage{lmodern}
+\usepackage[normalem]{ulem}
+\geometry{a4paper} % or letter or a5paper or ... etc
+% \geometry{landscape} % rotated page geometry
+
+\usepackage{url}
+
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\newcommand\myimp{\quad\Leftrightarrow\quad}
+\newcommand\half{\frac{1}{2}}
+\newcommand\myvec[1]{\mathbf{#1}}
+\newcommand\mymod[1]{\ (\text{mod }#1)}
+\newcommand\myreal{\mathbb{R}}
+\newcommand\mynatural{\mathbb{N}}
+\newcommand\myinteger{\mathbb{Z}}
+\newcommand\mycomplex{\mathbb{C}}
+\newcommand\myint{\text{int}}
+\newcommand\norm[1]{||\,#1\,||}
+\newcommand\bignorm[1]{\big|\big|\,#1\,\big|\big|}
+\newcommand\seq[1]{\big\{#1\big\}}
+\newcommand\smallseq[1]{\{#1\}}
+\newcommand\smallseqtoinf[1]{\smallseq{#1}_{k=1}^\infty}
+\newcommand\lonew{\ell^1_w}
+\newcommand\lone{\ell^1}
+\newcommand\ltwo{\ell^2(\mynatural)}
+\newcommand\ip[2]{\langle#1,#2\rangle}
+\newcommand\uinf{u_{\infty}}
+\newcommand\erf{\text{erf\,}}
+\newcommand\infint{\int_{\infty}^{\infty}}
+\newcommand\fpi{FPI}
+\newcommand\E[1]{\text{E}[#1]}
+\newcommand\Var[1]{\text{Var}[#1]}
+\newcommand\Cov[1]{\text{Cov}[#1]}
+\newcommand\myverb[1]{{\footnotesize\texttt{#1}}}
+\newcommand\Yhat{\widehat{Y}}
+\newcommand\given{\,|\,}
+\newcommand\vecx{\myvec{x}}
+\newcommand\vecA{\myvec{A}}
+\newcommand\matlab{\textsc{Matlab}}
+\newcommand\appref[1]{appendix~\ref{app:#1}}
+
+\usepackage[scaled]{beramono}
+\usepackage{listings}
+\lstset {                 % A rudimentary config that shows off some features.
+    language=R,
+    basicstyle=\scriptsize\ttfamily, % Without beramono, we'd get cmtt, the teletype font.
+    commentstyle=\textit, % cmtt doesn't do italics. It might do slanted text though.
+    keywordstyle=\textbf,
+    identifierstyle=,
+    framextopmargin=4pt,
+    framexbottommargin=4pt,
+    framexleftmargin=4pt,
+    framexrightmargin=4pt,
+    xleftmargin=4pt,
+    xrightmargin=4pt,
+    aboveskip=16pt,
+    belowskip=12pt,
+    abovecaptionskip=8pt,
+    backgroundcolor=\color{mygray},
+    frame=single,
+    showstringspaces=false,
+    captionpos=b,
+    tabsize=4            % Or whatever you use in your editor, I suppose.
+}
+
+\renewcommand{\lstlistlistingname}{Code Listings}
+\renewcommand{\lstlistingname}{Code Listing}
+
+\usepackage{tabulary}
+\newcolumntype{y}{>{\centering\arraybackslash}R}
+
+\title{\assignmenttitle}
+\date{\assignmentdate}
+\author{\coursetitle -- Anders Hørsted (s082382)}
+%\author{}
+
