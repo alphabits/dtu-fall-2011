@@ -1,5 +1,5 @@
 \def\homeworknumber{3}
-\def\homeworkdate{24-10-2011}
+\def\homeworkdate{25-10-2011}
 
 \input{../header}
 
@@ -31,7 +31,7 @@
     \begin{equation*}
         u(r, \theta) = 2\log{(r)} + (\frac{8}{5}r^{-1} - \frac{8}{5}r)\cos(\theta)
     \end{equation*}
-    The solution is plotted and is shown in figure~\ref{fig:q1-plot}. COMMENT!!
+    The solution is plotted and is shown in figure~\ref{fig:q1-plot}. From the figure it is seen that the solution takes on its minima at $(2,0)$ and maxima at $(2,\pi)$. Both point are on the boundary as expected from the maximum principle.
     \begin{figure}
         \centering
         \includegraphics[width=90mm]{q1-plot.png}
@@ -67,12 +67,12 @@
     \begin{align*}
         u(x_0, y_0) &= \int_\infty^\infty h(x)\frac{y_0}{\pi((x-x_0)^2 + y_0^2)}\,dx \\
         &= \frac{1}{\pi}\int_{-1}^{1} \frac{y_0}{((x-x_0)^2 + y_0^2)}\,dx \\
-        &= \frac{1}{\pi}\left(\arctan\left(\frac{x_0+1}{y_0}\right) - \arctan\left(\frac{x_0-1}{y_0}\right)\right)
+        &= \frac{1}{\pi}\left(\arctan\left(\frac{x_0+1}{y_0}\right) + \arctan\left(\frac{1-x_0}{y_0}\right)\right)
     \end{align*}
-    The solution is plotted and shown in figure~\ref{fig:q2-plot}. COMMENT!!
-    \begin{figure}
+    The solution is plotted and shown in figure~\ref{fig:q2-plot}. It is again found that both the minimum and maximum is obtained at the boundary.
+    \begin{figure}[ht]
         \centering
-        \includegraphics[width=90mm]{q2-plot.png}
+        \includegraphics[width=100mm]{q2-plot.png}
         \caption{Plot of solution for exercise 2}
         \label{fig:q2-plot}
     \end{figure}
