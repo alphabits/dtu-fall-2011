@@ -1,37 +1,74 @@
-carrots = read.table("../data/carrots.txt", header=TRUE, sep=",")
-carrots$Consumer = factor(carrots$Consumer)
-carrots$product = factor(carrots$product)
+# Include all dependencies
+library(multcomp)
+library(xtable)
+source('functions.R')
+
+# Controls whether the plots are saved or displayed
+SAVEPLOTS = TRUE
+
+# Load data in carrots variable
+source('loaddata.R')
 
 attach(carrots)
 
-# Choosing to look at Sweetness evaluations
-# First some plotting
+plot.and.save('sweetness-histogram.pdf', 7, 7,
+              plot, factor(Sweetness), main='Histogram for Sweetness scores',
+              xlab='Sweetness', ylab='Counts')
 
-##pdf("../plots/histogram-sweetness.pdf")
-plot(factor(Sweetness))
-##dev.off()
+titletmpl = 'Distribution of sweetness score for the %s'
+plot.and.save('product-boxplot.pdf', 7, 7,
+              plot, product, Sweetness,
+              main=sprintf(titletmpl, '12 products'),
+              xlab='Product', ylab='Sweetness')
+plot.and.save('consumer-boxplot.pdf', 14, 7,
+              plot, Consumer, Sweetness,
+              main=sprintf(titletmpl, '103 Consumers'),
+              xlab='Consumer', ylab='Sweetness')
 
-plot(product, Sweetness)
-plot(Consumer, Sweetness)
+# Define model and calculate anova
+m1 = lm(Sweetness ~ Consumer + product)
+m1.anova = anova(m1)
+m1.res = residuals(m1)
 
-ind = product %in% list("Bolero_E", "Bolero_F", "Yukon_L")
-interaction.plot(Consumer[ind], product[ind], Sweetness[ind])
+# Residual plot is difficult to interpret. 
+# Try a few transformations
+models = list(
+    list(y=Sweetness^0.5, key="sqrt", label="Square root"),
+    list(y=log(Sweetness), key="log", label="Log"),
+    list(y=(Sweetness^0.5-1)/0.5, key="boxcox", label="Box/Cox")
+)
+for (model in models) {
+    y.tmp = model[['y']]
+    key.tmp = model[['key']]
+    model.tmp = lm(y.tmp~Consumer+product)
+    filename.tmpl = '%s-model-%s.pdf'
+    title.tmpl = sprintf('%%s for %s transformed model', 
+                         model[['label']])
+    plot.and.save(sprintf(filename.tmpl, 'qqplot', key.tmp), 7, 7,
+                  main=sprintf(title.tmpl, 'Normal Q-Q plot'),
+                  qqnorm, residuals(model.tmp))
+    plot.and.save(sprintf(filename.tmpl, 'residuals', key.tmp), 7, 7,
+                  plot, predict(model.tmp), residuals(model.tmp),
+                  main=sprintf(title.tmpl, 'Residuals plot'),
+                  xlab="Fitted values", ylab="Residuals")
+}
 
-m1 = lm(BITTER~Consumer+product)
-anova(m1)
+# Save anova as latex table
+sink('../tables/q1-model1-xtable.tex')
+print(xtable(m1.anova))
+sink()
 
-res.m1 = residuals(m1)
-qqnorm(res.m1)
-plot(predict(m1), res.m1)
-plot(Consumer, res.m1)
-plot(product, res.m1)
+# Plot diagnostic plots
+plot.and.save('qqplot-model1.pdf', 7, 7,
+              qqnorm, m1.res)
+plot.and.save('residuals-model1.pdf', 7, 7,
+              plot, predict(m1), m1.res,
+              xlab='Fitted values', ylab='Residuals')
 
+# Do post hoc analysis
+hypothesis = glht(m1, linfct=mcp(product="Tukey"))
+sink('../tables/q1-post-hoc.tex')
+summary(hypothesis)
+sink()
 
-m2 = lm(log(BITTER)~Consumer+product)
-anova(m2)
-
-res.m2 = residuals(m2)
-qqnorm(res.m2)
-plot(predict(m2), res.m2)
-plot(Consumer, res.m2)
-plot(product, res.m2)
+detach('carrots')

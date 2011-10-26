@@ -22,8 +22,25 @@ def generate_cropped_pdfs(globstr):
         local('pdfcrop {0} {0}'.format(f.replace('eps', 'pdf')))
 gcp = generate_cropped_pdfs
 
+def crop_pdfs(globstr):
+    files = glob(globstr)
+    for f in files:
+        local('pdfcrop {0} {0}'.format(f))
+cp = crop_pdfs
+
 def replace_exponentials(globstr):
     files = glob(globstr)
     for f in files:
         local(r"sed -i 's/\([0-9]*\.[0-9]*\)e\([-+][0-9][0-9]\)/$\1\\cdot 10^{\2}$/g' "+f)
 re = replace_exponentials
+
+def trim_xtables(globstr):
+    files = glob(globstr)
+    for f in files:
+        local(r"sed -i -e '/begin{table}/,/begin{center}/ d' -e '/end{center}/,/end{table}/ d' " + f)
+tx = trim_xtables
+
+def prepare_all_material():
+    tx('tables/*-xtable.tex')
+    cp('plots/*.pdf')
+pam = prepare_all_material

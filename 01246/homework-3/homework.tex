@@ -1,0 +1,60 @@
+\def\homeworknumber{3}
+\def\homeworkdate{24-10-2011}
+
+\input{../header}
+
+\begin{document}
+    \maketitle
+
+    \section*{Exercise 1}
+    The annulus $A$ is given in polar coordinates by $r\in(1,2), \theta\in(0,2\pi)$. A PDE problem is defined by
+    \begin{gather}
+        \Delta u = 0 \text{ in }A \\
+        u(1,\theta) = 0,\quad \frac{\partial u}{\partial r}(2,\theta) = 1 - 2\cos(\theta),\quad \theta\in(0,2\pi)
+    \end{gather}
+    The solution to this PDE problem is now found. The solution formula 6.4.7 in the textbook can be used for this problem. Using the first boundary condition we get that
+    \begin{align*}
+        u(1,\theta) &= \frac{1}{2}(C_0 + D_0\log(1)) + \sum_{n=1}^\infty (C_n+D_n)\cos(n\theta) + (A_n+B_n)\sin(n\theta) \\
+        &\overset{\text{set}}{=} 0
+    \end{align*}
+    from which we conclude that $C_0=0, C_n=-D_n, A_n=-B_n$. Since
+    \begin{align*}
+        u_r(r, \theta) = \frac{1}{2}D_0r^{-1} + \sum_{n=1}^\infty (C_n n r^{n-1} - D_n n r^{-n-1})\cos(n\theta) + (A_n n r^{n-1} - B_n n r^{-n-1})\sin(n\theta)
+    \end{align*}
+    we get from the second boundary condition that
+    \begin{align*}
+        u_r(2, \theta) &= \frac{1}{4}D_0 + \sum_{n=1}^\infty (C_n n 2^{n-1} - D_n n 2^{-n-1})\cos(n\theta) + (A_n n 2^{n-1} - B_n n 2^{-n-1})\sin(n\theta) \\
+        &= \frac{1}{4}D_0 + \sum_{n=1}^\infty (2^{n-1} + 2^{-n-1})C_n n \cos(n\theta) + (2^{n-1} + 2^{-n-1})A_n n \sin(n\theta) \\
+        &\overset{\text{set}}{=} 1 - 2\cos(\theta)
+    \end{align*}
+    from which we get that $D_0=4, C_1=-\frac{8}{5}, D_1=\frac{8}{5}$ and all other coefficients should be 0. The solution is therefore given by
+    \begin{equation*}
+        u(r, \theta) = 2\log{(r)} + (\frac{8}{5}r^{-1} - \frac{8}{5}r)\cos(\theta)
+    \end{equation*}
+    The solution is plotted and is shown in figure~\ref{fig:q1-plot}. COMMENT!!
+    \begin{figure}
+        \centering
+        \includegraphics[width=80mm]{q1-plot.pdf}
+        \caption{Plot of solution for exercise 1}
+        \label{fig:q1-plot}
+    \end{figure}
+
+    \section*{Exercise 2}
+    Using the reflection method the Green's function $G$ for the Laplace Equation in the half plane $H=\{(x,y)\,|\,x\in\myreal,\:y>0\}$ is found. Based on the derivation of the Green's function in the half space in the textbook combined with the representation formula in two dimensions (eq. 7.2.5) a good guess for $G$ is
+    \begin{equation*}
+        G(\vecx, \vecx_0) = \frac{1}{2\pi}(\log|\vecx-\vecx_0| - \log|\vecx-\vecx_0^*|)
+    \end{equation*}
+    that in coordinates becomes
+    \begin{equation}\label{eq:green-coord}
+        G(\vecx, \vecx_0) = \frac{1}{2\pi}(\log((x-x_0)^2 + (y-y_0)^2)^{1/2} - \log((x-x_0)^2 + (y+y_0)^2)^{1/2})
+    \end{equation}
+    By exactly the same arguments as in the textbook p. 191-192 it can be ``proved'' that $G$ is the Green's function for $D$ at $\vecx_0$. \par
+    We now use $G$ to solve the Dirichlet problem
+    \begin{gather*}
+        \Delta u = 0 \text{ in } H, \\
+        u(x, 0) = \begin{cases}
+            1, & x\in(-1,1) \\
+            0, & \text{elsewhere}
+        \end{cases}
+    \end{gather*}
+\end{document}

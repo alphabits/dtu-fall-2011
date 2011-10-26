@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  23 OCT 2011 20:46
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  25 OCT 2011 23:27
 entering extended mode
  %&-line parsing enabled.
 **carrots.tex
@@ -426,6 +426,147 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks25
 \@floatcapt=\box31
 )
+(/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+)
 (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -434,7 +575,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package color Info: Redefining color green on input line 19.
+Package color Info: Redefining color green on input line 20.
 
 (/var/lib/texmf/tex/generic/babel/babel.sty
 Package: babel 2008/07/06 v3.8l The Babel package
@@ -684,19 +825,26 @@ Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
 )) (./carrots.aux)
 \openout1 = `carrots.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 16.
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 16.
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -760,53 +908,81 @@ Package caption Info: listings package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count148
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 10.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 18.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 10.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 18.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 10.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 18.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 10.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 18.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 10.
+(Font)              <12> on input line 18.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 10.
+(Font)              <8> on input line 18.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 10.
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+(Font)              <6> on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 10.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 18.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (../../footer.tex
-Underfull \hbox (badness 1406) in paragraph at lines 4--9
-[]\T1/lmr/m/n/10.95 Jorge No-cedal & Stephen J. Wright, \T1/lmr/m/it/10.95 Nu-m
-er-i-cal Op-ti-miza-tion\T1/lmr/m/n/10.95 . Springer Sci-
+)
+<../plots/sweetness-histogram.pdf, id=1, 457.71pt x 463.7325pt>
+File: ../plots/sweetness-histogram.pdf Graphic file (type pdf)
+
+<use ../plots/sweetness-histogram.pdf>
+<../plots/product-boxplot.pdf, id=2, 473.77pt x 463.7325pt>
+File: ../plots/product-boxplot.pdf Graphic file (type pdf)
+
+<use ../plots/product-boxplot.pdf>
+<../plots/consumer-boxplot.pdf, id=3, 979.66pt x 463.7325pt>
+File: ../plots/consumer-boxplot.pdf Graphic file (type pdf)
+
+<use ../plots/consumer-boxplot.pdf>
+Overfull \hbox (12.18765pt too wide) in paragraph at lines 28--30
+ [] 
  []
 
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 35.
+(/usr/share/texmf-texlive/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 35.
+LaTeX Font Info:    Try loading font information for TS1+fvm on input line 35.
+
+(/usr/share/texmf-texlive/tex/latex/bera/ts1fvm.fd
+File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
+)
+LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 35.
+
+(../tables/q1-model1-xtable.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 3.
 ) [1
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -815,23 +991,427 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-(./carrots.aux) ) 
-Here is how much of TeX's memory you used:
- 8238 strings out of 493848
- 107126 string characters out of 1152824
- 237437 words of memory out of 3000000
- 11330 multiletter control sequences out of 15000+50000
- 36551 words of font info for 41 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
- 38i,6n,43p,253b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/tex
-mf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/font
-s/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
 
-Output written on carrots.pdf (1 page, 120774 bytes).
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2 <../plots/sweetness-histogram.pdf> <../plots/product-boxplot.pdf> <../plots/
+consumer-boxplot.pdf>]
+<../plots/qqplot-model1.pdf, id=61, 475.7775pt x 466.74374pt>
+File: ../plots/qqplot-model1.pdf Graphic file (type pdf)
+
+<use ../plots/qqplot-model1.pdf>
+<../plots/residuals-model1.pdf, id=62, 472.76625pt x 432.61626pt>
+File: ../plots/residuals-model1.pdf Graphic file (type pdf)
+
+<use ../plots/residuals-model1.pdf> [3 <../plots/qqplot-model1.pdf> <../plots/r
+esiduals-model1.pdf>]
+<../plots/interaction-region-cultivar.pdf, id=101, 475.7775pt x 431.6125pt>
+File: ../plots/interaction-region-cultivar.pdf Graphic file (type pdf)
+
+<use ../plots/interaction-region-cultivar.pdf> (../tables/q2-model2-xtable.tex)
+[4 <../plots/interaction-region-cultivar.pdf>] [5]
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 84.
+
+<../plots/qqplot-model-boxcox.pdf, id=113, 475.7775pt x 466.74374pt>
+File: ../plots/qqplot-model-boxcox.pdf Graphic file (type pdf)
+
+<use ../plots/qqplot-model-boxcox.pdf>
+<../plots/residuals-model-boxcox.pdf, id=114, 472.76625pt x 466.74374pt>
+File: ../plots/residuals-model-boxcox.pdf Graphic file (type pdf)
+
+<use ../plots/residuals-model-boxcox.pdf>
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+(../src/functions.R
+LaTeX Font Info:    Font shape `T1/fvm/bx/n' in size <8> not available
+(Font)              Font shape `T1/fvm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 2.
+)
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 98.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+(../src/loaddata.R)
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 100.
+
+[6 <../plots/qqplot-model-boxcox.pdf> <../plots/residuals-model-boxcox.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+(../src/question1.R
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <8> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
+(Font)              scaled to size 7.19995pt on input line 1.
+ [7])
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+(../src/question2.R [8])
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+(../tables/q1-post-hoc-trimmed.tex)
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+[9]
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+(../tables/q2-post-hoc-trimmed.tex)
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+[10] (../../footer.tex) [11] (./carrots.aux) ) 
+Here is how much of TeX's memory you used:
+ 9915 strings out of 493848
+ 127486 string characters out of 1152824
+ 342201 words of memory out of 3000000
+ 12940 multiletter control sequences out of 15000+50000
+ 63333 words of font info for 64 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 38i,12n,43p,1106b,1743s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/e
+nc/dvips/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
+hare/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</home/anders/texmf/
+fonts/type1/public/bera/fvmb8a.pfb></home/anders/texmf/fonts/type1/public/bera/
+fvmr8a.pfb></home/anders/texmf/fonts/type1/public/bera/fvmro8a.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on carrots.pdf (11 pages, 644832 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
+ 216 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

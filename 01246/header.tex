@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\linespread{1}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{amsmath,amssymb,latexsym,epic,eepic,epsfig,graphics,psfrag}
+\usepackage{amsfonts}
+\usepackage{graphicx,float}
+
+\usepackage[danish]{babel}
+
+\usepackage[bottom]{footmisc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\small\textit{01246 Partial Differential Equations - Fall 2011 - Anders Hørsted (s082382)}}
+\rhead{\thepage}
+\chead{}
+\lfoot{}\cfoot{}\rfoot{}
+
+\usepackage{pstricks}
+\usepackage{pst-node}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{multirow}
+%\usepackage{fouriernc}
+%\usepackage[charter]{mathdesign}
+\usepackage{lmodern}
+\usepackage[normalem]{ulem}
+\geometry{a4paper} % or letter or a5paper or ... etc
+% \geometry{landscape} % rotated page geometry
+
+\usepackage{url}
+\usepackage{natbib}
+\renewcommand\bibsection*{}
+\bibliographystyle{plain}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\newcommand\myimp{\quad\Leftrightarrow\quad}
+\newcommand\half{\frac{1}{2}}
+\newcommand\myvec[1]{\mathbf{#1}}
+\newcommand\vecx{\myvec{x}}
+\newcommand\mymod[1]{\ (\text{mod }#1)}
+\newcommand\myreal{\mathbb{R}}
+\newcommand\mynatural{\mathbb{N}}
+\newcommand\myinteger{\mathbb{Z}}
+\newcommand\mycomplex{\mathbb{C}}
+\newcommand\myint{\text{int}}
+\newcommand\norm[1]{||\,#1\,||}
+\newcommand\bignorm[1]{\big|\big|\,#1\,\big|\big|}
+\newcommand\seq[1]{\big\{#1\big\}}
+\newcommand\smallseq[1]{\{#1\}}
+\newcommand\smallseqtoinf[1]{\smallseq{#1}_{k=1}^\infty}
+\newcommand\lonew{\ell^1_w}
+\newcommand\lone{\ell^1}
+\newcommand\ltwo{\ell^2(\mynatural)}
+\newcommand\ip[2]{\langle#1,#2\rangle}
+\newcommand\hilbert[1]{\mathcal{#1}}
+\newcommand\uinf{u_{\infty}}
+\newcommand\erf{\text{erf\,}}
+\newcommand\infint{\int_{\infty}^{\infty}}
+
+\usepackage{tabulary}
+\newcolumntype{y}{>{\centering\arraybackslash}R}
+
+\title{Homework \homeworknumber}
+\author{01246 Partial differential equations -- \homeworkdate -- Anders Hørsted (s082382)}
+%\author{}
+\date{} % delete this line to display the current date

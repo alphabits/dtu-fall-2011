@@ -1,0 +1,130 @@
+\def\assignmenttitle{Energy consumption}
+\def\assignmentdate{24-10-2011}
+\def\coursetitle{02418 Statistical modelling}
+\def\plotfolder{../plots}
+
+\input{../../header}
+
+\begin{document}
+
+\maketitle
+
+In this case models for the heat consumption of houses are build. The models are fitted to a data set containing measurements of heat consumption along with 4 other environmental variables as well as the date of the measurement for 16 different houses. First a model is build that only uses data for a single house. Then this model is extended to try to make a general model that includes all 16 houses.
+
+\section*{Model for one house}
+First a model for a single house is developed. The model will be based on the house with \myverb{id=5} and as a first step a plot of the heat consumption as function of the date is plotted in figure~\ref{fig:Q-house-5}. As seen the heat consumption $Q$ depends primary on the season with large $Q$ in the winter and small $Q$ in the summer. \par
+For the heat loss across a wall we have that 
+\begin{equation*}
+    Q_w = U_a(T_a - T_i)
+\end{equation*}
+where $T_a$ is the ambient temperature, $T_i$ the indoor temperature and $U_a$ is the response from temperature differences. We regard $T_i$ as a constant and therefore get the simple relationship $Q_w = U_aT_a + k$. If heat loss across the wall was the only way that energy could flow in/out of the house, a great fit for the data should be obtained by the linear model \myverb{Q\texttildelow Ta}.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=110mm]{\plotfolder/Q-h05.pdf}
+\caption{Heat consumption for house 5.}
+\label{fig:Q-house-5}
+\end{figure}
+
+\subsection*{Fitting the simple model for one house}
+\begin{table}[ht]
+    \centering
+    \input{../tables/one-house-m1-summary-xtable}
+    \caption{Summary table for the simple model for house 5}\label{tbl:onehouse-m1}
+\end{table}
+Fitting the simple model \myverb{Q\texttildelow Ta} in R gives the output shown in table~\ref{tbl:onehouse-m1} and the diagnostic plots in figure~\ref{fig:onehouse-m1-diagnostics}. From the plots the residuals are seen to be approximately normal distributed, but the variance do not seem to be independent of the fitted values. The primary problem is that our model makes negative predictions which doesn't make sense since $Q$ is the energy consumption of the house. This is also seen by the fact that the residuals for negative fitted values lies on an approximately straigth line with a slope of -1. Therefore all values that are predicted as negative have an observed value close to 0. More problematic is it that the residuals for fitted values in the interval $(0,2)$ seems to have a negative mean and variance smaller than for fitted values larger than 2. To get a idea of how the model can be extended the residuals are plotted against the predictors. The most interesting predictor turn out to be $T_a$ and this plot is shown in figure~\ref{fig:onehouse-m1-expla-res}. 
+\begin{figure}[ht]
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/one-house-m1-qq-plot.pdf}} \quad 
+          \subfigure{\includegraphics[width=70mm]{../plots/one-house-m1-fit-res-plot.pdf}}}
+    \caption{Diagnostic plots for simple model for house 5}
+    \label{fig:onehouse-m1-diagnostics}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/one-house-m1-Ta-data-plot.pdf}}}
+    \caption{Residuals vs $T_a$ for simple model for house 5}
+    \label{fig:onehouse-m1-expla-res}
+\end{figure}
+\subsection*{Fitting a higher order polynomial in $T_a$}
+From the plot of the residuals vs $T_a$ it is seen that for high values of $T_a$ the residuals are consistently above 0. A way to counteract this is by fitting a higher order polynomial in $T_a$. After testing a few different degrees a 3 degree polynomial seems to be of the right complexity. The model is defined as \myverb{Q\texttildelow poly(Ta, 3, raw=TRUE))} which gives the coefficients in table~\ref{tbl:onehouse-m2} and the diagnostic plots in figure~\ref{fig:onehouse-m2-diagnostics}. It is seen that the residuals vs fitted values shows much less structure now which is as wished. Also the model no longer predicts negative values of $Q$ which is great. On the other hand the residuals begins to be s-shaped in the QQ-plot which indicates a distribution with 'fat tails' compared to the normal distribution. The conclusion is that the 3 degree polynomial model do seem to fit the data well but the deviation from normallity shown in the QQ plot is unsatisfying. The next step is to use information from the other predictors.
+
+\begin{table}[ht]
+    \centering
+    \input{../tables/one-house-m2-summary-xtable}
+    \caption{Summary table for the third degree polynomial model for house 5}\label{tbl:onehouse-m2}
+\end{table}
+\begin{figure}[ht]
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/one-house-m2-qq-plot.pdf}} \quad 
+          \subfigure{\includegraphics[width=70mm]{../plots/one-house-m2-fit-res-plot.pdf}}}
+    \caption{Diagnostic plots for the third degree polynomial model for house 5}
+    \label{fig:onehouse-m2-diagnostics}
+\end{figure}
+
+\subsection*{Adding predictors to the 3 degree polynomial model}
+\begin{table}[ht]
+    \centering
+    \input{../tables/one-house-m3-summary-xtable}
+    \caption{Summary table for the model in (\ref{eq:m3})}\label{tbl:onehouse-m3}
+\end{table}
+Now the model given as
+\begin{equation}\label{eq:m3}
+    Q = \beta_1T_a + \beta_2T_a^2 + \beta_3T_a^3 + \beta_4W_s + \beta_5G + \beta_6S_{elev} + \beta_7 + \varepsilon
+\end{equation}
+is fitted to the data. The coefficients are shown in table~\ref{tbl:onehouse-m3} and it is seen that some of the predictors might be redundant. To trim the model a stepwise selection is performed. The result is that $W_s$ is dropped from the model. The model is then given as
+\begin{equation}\label{eq:m4}
+    Q = \beta_1T_a + \beta_2T_a^2 + \beta_3T_a^3 +  \beta_4G + \beta_5S_{elev} + \beta_6 + \varepsilon
+\end{equation}
+When this model is fitted to the data the coefficients in table~\ref{tbl:onehouse-m4} are obtained. The diagnostic plots are shown in figure~\ref{fig:onehouse-m4-diagnostics}. From the QQ plot it seems as if the residuals are slightly closer to a normal distribution but it isn't very significant compared to the model with only a third degree polynomial in $T_a$. For now the predictors are kept in the model though and the next step is to look for possible interaction terms to include.
+\begin{table}[ht]
+    \centering
+    \input{../tables/one-house-m4-summary-xtable}
+    \caption{Summary table for the model in (\ref{eq:m4})}\label{tbl:onehouse-m4}
+\end{table}
+\begin{figure}[ht]
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/one-house-m4-qq-plot.pdf}} \quad 
+          \subfigure{\includegraphics[width=70mm]{../plots/one-house-m4-fit-res-plot.pdf}}}
+    \caption{Diagnostic plots for the model in (\ref{eq:m4})}
+    \label{fig:onehouse-m4-diagnostics}
+\end{figure}
+
+\subsection*{Including interaction terms}
+There are 4 predictor variables which gives 6 unique interaction pairs to test. One idea is to include all pairs in a model and then do a stepwise selection to get rid of redundant pairs. First a single interaction pair is tested though. The interaction between the ambient temperature and the wind speed might be interesting since low temperature combined with high wind speed could mean increased flow of cold air through windows. The model given by
+\begin{equation}\label{eq:m5}
+    Q = \beta_1T_a + \beta_2T_a^2 + \beta_3T_a^3 +  \beta_4G + \beta_5S_{elev} + \beta_6W_s + \beta_7T_aW_s + \beta_8 + \varepsilon
+\end{equation}
+
+\textit{Due to bad time management this is unfortunately how far I get before hand-in. The summary table and diagnostics plots for the model with interaction are shown in table~\ref{tbl:onehouse-m5} and figure~\ref{fig:onehouse-m5-diagnostics}.}
+
+\begin{table}[ht]
+    \centering
+    \input{../tables/one-house-m5-summary-xtable}
+    \caption{Summary table for the model in (\ref{eq:m5})}\label{tbl:onehouse-m5}
+\end{table}
+\begin{figure}[ht]
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/one-house-m5-qq-plot.pdf}} \quad 
+          \subfigure{\includegraphics[width=70mm]{../plots/one-house-m5-fit-res-plot.pdf}}}
+    \caption{Diagnostic plots for the model in (\ref{eq:m5})}
+    \label{fig:onehouse-m5-diagnostics}
+\end{figure}
+
+\pagebreak
+
+\renewcommand\thesection{\Alph{section}}
+\section{Appendices}
+All R source code is included in the appendices. All the source code including the Latex code used for the report can also be found at \url{https://github.com/alphabits/dtu-fall-2011/tree/master/02418/heat-consumption}.
+\subsection{functions.R}
+\lstinputlisting{../src/functions.R}
+\subsection{loaddata.R}
+\lstinputlisting{../src/loaddata.R}
+\subsection{eda.R}
+\lstinputlisting{../src/eda.R}
+\subsection{singlehouse.R}
+\lstinputlisting{../src/singlehouse.R}
+
+\pagebreak
+\input{../../footer}
+
+\end{document}
