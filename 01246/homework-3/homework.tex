@@ -15,7 +15,7 @@
     The solution to this PDE problem is now found. The solution formula 6.4.7 in the textbook can be used for this problem. Using the first boundary condition we get that
     \begin{align*}
         u(1,\theta) &= \frac{1}{2}(C_0 + D_0\log(1)) + \sum_{n=1}^\infty (C_n+D_n)\cos(n\theta) + (A_n+B_n)\sin(n\theta) \\
-        &\overset{\text{set}}{=} 0
+        &= 0
     \end{align*}
     from which we conclude that $C_0=0, C_n=-D_n, A_n=-B_n$. Since
     \begin{align*}
@@ -25,7 +25,7 @@
     \begin{align*}
         u_r(2, \theta) &= \frac{1}{4}D_0 + \sum_{n=1}^\infty (C_n n 2^{n-1} - D_n n 2^{-n-1})\cos(n\theta) + (A_n n 2^{n-1} - B_n n 2^{-n-1})\sin(n\theta) \\
         &= \frac{1}{4}D_0 + \sum_{n=1}^\infty (2^{n-1} + 2^{-n-1})C_n n \cos(n\theta) + (2^{n-1} + 2^{-n-1})A_n n \sin(n\theta) \\
-        &\overset{\text{set}}{=} 1 - 2\cos(\theta)
+        &= 1 - 2\cos(\theta)
     \end{align*}
     from which we get that $D_0=4, C_1=-\frac{8}{5}, D_1=\frac{8}{5}$ and all other coefficients should be 0. The solution is therefore given by
     \begin{equation*}
@@ -34,7 +34,7 @@
     The solution is plotted and is shown in figure~\ref{fig:q1-plot}. COMMENT!!
     \begin{figure}
         \centering
-        \includegraphics[width=80mm]{q1-plot.pdf}
+        \includegraphics[width=90mm]{q1-plot.png}
         \caption{Plot of solution for exercise 1}
         \label{fig:q1-plot}
     \end{figure}
@@ -52,9 +52,94 @@
     We now use $G$ to solve the Dirichlet problem
     \begin{gather*}
         \Delta u = 0 \text{ in } H, \\
-        u(x, 0) = \begin{cases}
+        h(x) = u(x, 0) = \begin{cases}
             1, & x\in(-1,1) \\
             0, & \text{elsewhere}
         \end{cases}
     \end{gather*}
+    To solve the problem, $\frac{\partial G}{\partial n}=-\frac{\partial G}{\partial y}|_{y=0}$ must be determined.
+    \begin{align*}
+        -\frac{\partial G}{\partial y} &= \frac{1}{2\pi}\left(\frac{y+y_0}{|\vecx-\vecx_0^*|^2} - \frac{y-y_0}{|\vecx-\vecx_0|^2}\right)
+        \intertext{\textit{that at the boundary ($y=0$) becomes}}
+        &= \frac{y_0}{\pi((x-x_0)^2 + y_0^2)}
+    \end{align*}
+    Using theorem 7.3.1 the solution of the Dirichlet problem is then given as
+    \begin{align*}
+        u(x_0, y_0) &= \int_\infty^\infty h(x)\frac{y_0}{\pi((x-x_0)^2 + y_0^2)}\,dx \\
+        &= \frac{1}{\pi}\int_{-1}^{1} \frac{y_0}{((x-x_0)^2 + y_0^2)}\,dx \\
+        &= \frac{1}{\pi}\left(\arctan\left(\frac{x_0+1}{y_0}\right) - \arctan\left(\frac{x_0-1}{y_0}\right)\right)
+    \end{align*}
+    The solution is plotted and shown in figure~\ref{fig:q2-plot}. COMMENT!!
+    \begin{figure}
+        \centering
+        \includegraphics[width=90mm]{q2-plot.png}
+        \caption{Plot of solution for exercise 2}
+        \label{fig:q2-plot}
+    \end{figure}
+
+    \section*{Exercise 3}
+    A PDE problem is given by
+    \begin{gather*}
+        \Delta u = 0,\quad (x,y)\in(0,\pi)^2, \\
+        u(0,y)=0,\:\: u_x(\pi,y)+2u(\pi,y)=0,\\
+        u(x,0)=0,\:\: u(x,\pi)=x(1-x)
+    \end{gather*}
+    The problem is solved using separation of variables. Therefore the solutions is given by
+    \begin{equation*}
+        u_n(x,y) = X_n(x)Y_n(y)
+    \end{equation*}
+    From $\Delta u=0$ we get
+    \begin{align*}
+        X_n''Y_n + X_nY_n'' &= 0 \myimp\\
+        \frac{X_n''}{X_n} &= -\frac{Y_n''}{Y_n}
+    \end{align*}
+    and since the left side is independent of $y$ and the right side independent of $x$ we get
+    \begin{align}\label{eq:sep}
+        \frac{X_n''}{X_n} = -\frac{Y_n''}{Y_n} = -\lambda_n
+    \end{align}
+    Focusing on $X_n$ we get the ODE
+    \begin{gather*}
+        X_n'' + \lambda_n X_n = 0, \\
+        X_n(0) = 0,\quad X_n'(\pi) + 2X_n(\pi) = 0
+    \end{gather*}
+    Now we are given that all eigenvalues $\lambda_n=\beta_n^2$ are positive. Then the solutions for the ODE of $X$ are
+    \begin{equation*}
+        X_n(x) = A_n\cos(\beta_n x) + B_n\sin(\beta_n x)
+    \end{equation*}
+    Using the first boundary condition gives
+    \begin{align*}
+        X_n(0) = A_n = 0
+    \end{align*}
+    The second boundary condition then gives
+    \begin{align*}
+        X_n'(\pi) + 2X_n(\pi) &= B_n\beta_n\cos(\beta_n \pi) + 2B_n\sin(\beta_n \pi) \\
+        &= 0 \myimp \\
+        \beta_n\cos(\beta_n\pi) &= -2\sin(\beta_n\pi) \\
+        -\frac{\beta_n}{2} &= \tan(\beta_n\pi)
+    \end{align*}
+    The eigenvalues are given as solutions to this equation and the corresponding eigenfunctions are $\sin(\beta_n x)$. \par
+    From (\ref{eq:sep}) and the boundary conditions of the original PDE the ODE for $Y_n$ is given by
+    \begin{gather*}
+        Y_n'' - \lambda Y_n = 0,\quad Y_n(0) = 0
+    \end{gather*}
+    This ODE has exponential solutions that for convenience are written
+    \begin{equation*}
+        Y_n(y) = C_n\cosh(\beta_n y) + D_n\sinh(\beta_n y)
+    \end{equation*}
+    From the homogeneous boundary condition we get
+    \begin{equation*}
+        Y_n(0) = C_n = 0
+    \end{equation*}
+    and we can then write the solution that satifies all the homogeneous boundary conditions for the PDE as
+    \begin{equation*}
+        u(x,y) = \sum_{n=0}^\infty D_n\sinh(\beta_n y)\sin(\beta_n x)
+    \end{equation*}
+    To determine the coefficients $D_n$ we use the inhomogeneous boundary condition
+    \begin{align*}
+        u(x,\pi) = \sum_{n=0}^\infty D_n\sinh(\beta_n \pi)\sin(\beta_n x) = x(1-x)
+    \end{align*}
+    This is the Fourier sine series for the function $\phi(x)=x(1-x)$ and from equation 5.1.4 we find the coefficients $D_n$ by
+    \begin{equation*}
+        D_n = \frac{2}{\pi\sinh(\beta_n\pi)}\int_0^\pi x(1-x)\sin(\beta_n x)\,dx
+    \end{equation*}
 \end{document}

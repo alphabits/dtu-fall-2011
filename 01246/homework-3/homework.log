@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  26 OCT 2011 02:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  26 OCT 2011 04:20
 entering extended mode
  %&-line parsing enabled.
 **homework.tex
@@ -729,9 +729,9 @@ Overfull \hbox (11.03969pt too wide) in paragraph at lines 23--23
 [] 
  []
 
-<q1-plot.pdf, id=1, 545.03625pt x 545.03625pt>
-File: q1-plot.pdf Graphic file (type pdf)
- <use q1-plot.pdf> [1
+<q1-plot.png, id=1, 782.925pt x 782.925pt>
+File: q1-plot.png Graphic file (type png)
+ <use q1-plot.png> [1
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -745,30 +745,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./q1-plot.pdf>] (./homework.aux) ) 
+[2 <./q1-plot.png (PNG copy)>] <q2-plot.png, id=22, 680.5425pt x 680.5425pt>
+File: q2-plot.png Graphic file (type png)
+
+<use q2-plot.png> [3 <./q2-plot.png (PNG copy)>] [4] [5] (./homework.aux) ) 
 Here is how much of TeX's memory you used:
- 6746 strings out of 493848
- 85899 string characters out of 1152824
- 184708 words of memory out of 3000000
- 9878 multiletter control sequences out of 15000+50000
- 45483 words of font info for 48 fonts, out of 3000000 for 9000
+ 6755 strings out of 493848
+ 86016 string characters out of 1152824
+ 185708 words of memory out of 3000000
+ 9885 multiletter control sequences out of 15000+50000
+ 49701 words of font info for 49 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,12n,43p,343b,306s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-r
-m.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/font
-s/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
-}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on homework.pdf (2 pages, 232080 bytes).
+ 38i,16n,43p,343b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/us
+r/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm
+/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/t
+exmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/l
+mbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on homework.pdf (5 pages, 525639 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
+ 76 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
