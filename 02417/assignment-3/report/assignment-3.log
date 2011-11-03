@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  26 OCT 2011 05:37
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  3 NOV 2011 14:59
 entering extended mode
  %&-line parsing enabled.
 **assignment-3.tex
@@ -476,37 +476,57 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 \f@ncyO@olf=\skip55
 \f@ncyO@orf=\skip56
 )
+(/usr/share/texmf-texlive/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip57
+\subfigcapskip=\skip58
+\subfigcaptopadj=\dimen132
+\subfigbottomskip=\skip59
+\subfigcapmargin=\dimen133
+\subfiglabelskip=\skip60
+\c@subfigure=\count118
+\c@lofdepth=\count119
+\c@subtable=\count120
+\c@lotdepth=\count121
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texmf-texlive/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip61
+\subfig@bottom=\skip62
+)
 (/usr/share/texmf-texlive/tex/latex/pstricks/pstricks.sty
 Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
 
 (/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.tex
 `PSTricks' v1.29  <2009/05/19> (tvz)
-\pst@dima=\dimen132
-\pst@dimb=\dimen133
-\pst@dimc=\dimen134
-\pst@dimd=\dimen135
-\pst@dimg=\dimen136
-\pst@dimh=\dimen137
+\pst@dima=\dimen134
+\pst@dimb=\dimen135
+\pst@dimc=\dimen136
+\pst@dimd=\dimen137
+\pst@dimg=\dimen138
+\pst@dimh=\dimen139
 \pst@hbox=\box32
 \pst@boxg=\box33
-\pst@cnta=\count118
-\pst@cntb=\count119
-\pst@cntc=\count120
-\pst@cntd=\count121
-\pst@cntg=\count122
-\pst@cnth=\count123
+\pst@cnta=\count122
+\pst@cntb=\count123
+\pst@cntc=\count124
+\pst@cntd=\count125
+\pst@cntg=\count126
+\pst@cnth=\count127
 \pst@toks=\toks27
 (/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.con)
-\psunit=\dimen138
-\psxunit=\dimen139
-\psyunit=\dimen140
-\pslinewidth=\dimen141
+\psunit=\dimen140
+\psxunit=\dimen141
+\psyunit=\dimen142
+\pslinewidth=\dimen143
 \pst@customdefs=\toks28
-\pslinearc=\dimen142
+\pslinearc=\dimen144
 \everypsbox=\toks29
-\psframesep=\dimen143
-\pslabelsep=\dimen144
-\pst@shift=\dimen145
+\psframesep=\dimen145
+\pslabelsep=\dimen146
+\pst@shift=\dimen147
 \theoverlaybox=\box34
 )
 File: pstricks.tex 2009/05/19 v1.29 `PSTricks' (tvz,hv)
@@ -533,17 +553,17 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 Package: pst-node 2006/01/01 package wrapper for pst-node.tex
 
 (/usr/share/texmf-texlive/tex/generic/pstricks/pst-node.tex  v1.01, 2008/11/26
-\psrow=\count124
-\pscol=\count125
-\psmatrixcnt=\count126
-\psrowsep=\skip57
-\pscolsep=\skip58
+\psrow=\count128
+\pscol=\count129
+\psmatrixcnt=\count130
+\psrowsep=\skip63
+\pscolsep=\skip64
 )
 File: pst-node.tex 2008/11/26 1.01 `pst-node' (tvz)
 ) (/usr/share/texmf-texlive/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen146
-\WF@size=\dimen147
-\c@WF@wrappedlines=\count127
+\wrapoverhang=\dimen148
+\WF@size=\dimen149
+\c@WF@wrappedlines=\count131
 \WF@box=\box35
 \WF@everypar=\toks30
 Package: wrapfig 2003/01/31  v 3.6
@@ -553,19 +573,20 @@ Package: caption 2009/10/09 v3.1k Customizing captions (AR)
 
 (/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
 Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
-\captionmargin=\dimen148
-\captionmargin@=\dimen149
-\captionwidth=\dimen150
-\caption@indent=\dimen151
-\caption@parindent=\dimen152
-\caption@hangindent=\dimen153
+\captionmargin=\dimen150
+\captionmargin@=\dimen151
+\captionwidth=\dimen152
+\caption@indent=\dimen153
+\caption@parindent=\dimen154
+\caption@hangindent=\dimen155
 )
-\c@ContinuedFloat=\count128
+\c@ContinuedFloat=\count132
 Package caption Info: float package is loaded.
+Package caption Info: subfigure package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
 (/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen154
+\bigstrutjot=\dimen156
 )
 (/usr/share/texmf/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
@@ -605,13 +626,13 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (/usr/share/texmf-texlive/tex/latex/ltxmisc/ulem.sty
 \UL@box=\box36
 \UL@hyphenbox=\box37
-\UL@skip=\skip59
+\UL@skip=\skip65
 \UL@hook=\toks31
-\UL@pe=\count129
-\UL@pixel=\dimen155
+\UL@pe=\count133
+\UL@pixel=\dimen157
 \ULC@box=\box38
 Package: ulem 2000/05/26
-\ULdepth=\dimen156
+\ULdepth=\dimen158
 )
 (/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip11
@@ -621,23 +642,23 @@ Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 Package: beramono 2004/01/31 (WaS)
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count130
+\lst@mode=\count134
 \lst@gtempboxa=\box39
 \lst@token=\toks32
-\lst@length=\count131
-\lst@currlwidth=\dimen157
-\lst@column=\count132
-\lst@pos=\count133
-\lst@lostspace=\dimen158
-\lst@width=\dimen159
-\lst@newlines=\count134
-\lst@lineno=\count135
-\lst@maxwidth=\dimen160
+\lst@length=\count135
+\lst@currlwidth=\dimen159
+\lst@column=\count136
+\lst@pos=\count137
+\lst@lostspace=\dimen160
+\lst@width=\dimen161
+\lst@newlines=\count138
+\lst@lineno=\count139
+\lst@maxwidth=\dimen162
 
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count136
-\lst@skipnumbers=\count137
+\c@lstnumber=\count140
+\lst@skipnumbers=\count141
 \lst@framebox=\box40
 )
 (/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
@@ -656,11 +677,11 @@ File: lstlang3.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-texlive/tex/latex/tabulary/tabulary.sty
 Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
-\TY@count=\count138
-\TY@linewidth=\dimen161
-\tymin=\dimen162
-\tymax=\dimen163
-\TY@tablewidth=\dimen164
+\TY@count=\count142
+\TY@linewidth=\dimen163
+\tymin=\dimen164
+\tymax=\dimen165
+\TY@tablewidth=\dimen166
 )) (./assignment-3.aux)
 \openout1 = `assignment-3.aux'.
 
@@ -723,21 +744,21 @@ driver: pdftex
 -----------------------
 (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count139
-\scratchdimen=\dimen165
+\scratchcounter=\count143
+\scratchdimen=\dimen167
 \scratchbox=\box41
-\nofMPsegments=\count140
-\nofMParguments=\count141
+\nofMPsegments=\count144
+\nofMParguments=\count145
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count142
-\MPscratchDim=\dimen166
-\MPnumerator=\count143
+\MPscratchCnt=\count146
+\MPscratchDim=\dimen168
+\MPnumerator=\count147
 \everyMPtoPDFconversion=\toks34
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count144
+\c@lstlisting=\count148
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 10.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -779,27 +800,35 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 10.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [1
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-Non-PDF special ignored!
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 15.
-
-(/usr/share/texmf-texlive/tex/latex/bera/t1fvm.fd
-File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 15.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 15.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 15.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 15.
+<../plots/trainingset.pdf, id=1, 834.11626pt x 463.7325pt>
+File: ../plots/trainingset.pdf Graphic file (type pdf)
+
+<use ../plots/trainingset.pdf>
+
+LaTeX Warning: Reference `fig:acfs-trainingset' on page 1 undefined on input li
+ne 22.
+
+<../plots/acf-trainingset.pdf, id=2, 473.77pt x 470.75874pt>
+File: ../plots/acf-trainingset.pdf Graphic file (type pdf)
+
+<use ../plots/acf-trainingset.pdf>
+<../plots/pacf-trainingset.pdf, id=3, 475.7775pt x 470.75874pt>
+File: ../plots/pacf-trainingset.pdf Graphic file (type pdf)
+
+<use ../plots/pacf-trainingset.pdf>
+Overfull \hbox (1.98486pt too wide) in paragraph at lines 28--29
+ [][] 
+ []
+
+[1
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+Non-PDF special ignored!
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../plots/trainingset.pdf>]
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -807,24 +836,43 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] (../../footer.tex) [3] (./assignment-3.aux) ) 
+[2 <../plots/acf-trainingset.pdf> <../plots/pacf-trainingset.pdf>]
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 37.
+
+(/usr/share/texmf-texlive/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 37.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 37.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 37.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 37.
+ [3] (../../footer.tex)
+[4] (./assignment-3.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8145 strings out of 493848
- 105813 string characters out of 1152824
- 235555 words of memory out of 3000000
- 11226 multiletter control sequences out of 15000+50000
- 56773 words of font info for 63 fonts, out of 3000000 for 9000
+ 8323 strings out of 493848
+ 108494 string characters out of 1152824
+ 239334 words of memory out of 3000000
+ 11393 multiletter control sequences out of 15000+50000
+ 59768 words of font info for 64 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,11n,43p,328b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/font
-s/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</home/a
-nders/texmf/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
-Output written on assignment-3.pdf (3 pages, 130493 bytes).
+ 38i,11n,43p,849b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts
+/enc/dvips/lm/lm-ec.enc}</home/anders/texmf/fonts/type1/public/bera/fvmr8a.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
+Output written on assignment-3.pdf (4 pages, 173693 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
