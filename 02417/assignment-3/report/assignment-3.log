@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  3 NOV 2011 14:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.8)  4 NOV 2011 09:36
 entering extended mode
  %&-line parsing enabled.
 **assignment-3.tex
@@ -804,24 +804,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 <../plots/trainingset.pdf, id=1, 834.11626pt x 463.7325pt>
 File: ../plots/trainingset.pdf Graphic file (type pdf)
 
-<use ../plots/trainingset.pdf>
-
-LaTeX Warning: Reference `fig:acfs-trainingset' on page 1 undefined on input li
-ne 22.
-
-<../plots/acf-trainingset.pdf, id=2, 473.77pt x 470.75874pt>
-File: ../plots/acf-trainingset.pdf Graphic file (type pdf)
-
-<use ../plots/acf-trainingset.pdf>
-<../plots/pacf-trainingset.pdf, id=3, 475.7775pt x 470.75874pt>
-File: ../plots/pacf-trainingset.pdf Graphic file (type pdf)
-
-<use ../plots/pacf-trainingset.pdf>
-Overfull \hbox (1.98486pt too wide) in paragraph at lines 28--29
- [][] 
- []
-
-[1
+<use ../plots/trainingset.pdf> [1
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -830,6 +813,32 @@ Non-PDF special ignored!
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../plots/trainingset.pdf>]
 
+<../plots/acf-trainingset.pdf, id=40, 473.77pt x 470.75874pt>
+File: ../plots/acf-trainingset.pdf Graphic file (type pdf)
+
+<use ../plots/acf-trainingset.pdf>
+<../plots/pacf-trainingset.pdf, id=41, 475.7775pt x 470.75874pt>
+File: ../plots/pacf-trainingset.pdf Graphic file (type pdf)
+
+<use ../plots/pacf-trainingset.pdf>
+Overfull \hbox (1.98486pt too wide) in paragraph at lines 54--55
+ [][] 
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 64.
+<../plots/acf-onediff.pdf, id=42, 473.77pt x 470.75874pt>
+File: ../plots/acf-onediff.pdf Graphic file (type pdf)
+
+<use ../plots/acf-onediff.pdf>
+<../plots/pacf-onediff.pdf, id=43, 475.7775pt x 470.75874pt>
+File: ../plots/pacf-onediff.pdf Graphic file (type pdf)
+
+<use ../plots/pacf-onediff.pdf>
+Overfull \hbox (1.98486pt too wide) in paragraph at lines 77--78
+ [][] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -837,42 +846,653 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2 <../plots/acf-trainingset.pdf> <../plots/pacf-trainingset.pdf>]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 37.
+<../plots/acf-seasondiff.pdf, id=104, 473.77pt x 470.75874pt>
+File: ../plots/acf-seasondiff.pdf Graphic file (type pdf)
 
+<use ../plots/acf-seasondiff.pdf>
+<../plots/pacf-seasondiff.pdf, id=105, 475.7775pt x 470.75874pt>
+File: ../plots/pacf-seasondiff.pdf Graphic file (type pdf)
+
+<use ../plots/pacf-seasondiff.pdf>
+Overfull \hbox (1.98486pt too wide) in paragraph at lines 101--102
+ [][] 
+ []
+
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 110.
 (/usr/share/texmf-texlive/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 37.
+(Font)              scaled to size 8.09995pt on input line 110.
+
+<../plots/residuals-m1.pdf, id=106, 472.76625pt x 463.7325pt>
+File: ../plots/residuals-m1.pdf Graphic file (type pdf)
+
+<use ../plots/residuals-m1.pdf>
+<../plots/qq-residuals-m1.pdf, id=107, 475.7775pt x 466.74374pt>
+File: ../plots/qq-residuals-m1.pdf Graphic file (type pdf)
+
+<use ../plots/qq-residuals-m1.pdf>
+Overfull \hbox (1.98486pt too wide) in paragraph at lines 124--125
+ [][] 
+ []
+
+<../plots/acf-m1.pdf, id=108, 473.77pt x 470.75874pt>
+File: ../plots/acf-m1.pdf Graphic file (type pdf)
+
+<use ../plots/acf-m1.pdf> [3 <../plots/acf-onediff.pdf> <../plots/pacf-onediff.
+pdf>]
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+(../tables/model1.txt)
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 142.
+
+<../plots/residuals-m2.pdf, id=156, 472.76625pt x 463.7325pt>
+File: ../plots/residuals-m2.pdf Graphic file (type pdf)
+
+<use ../plots/residuals-m2.pdf>
+<../plots/qq-residuals-m2.pdf, id=157, 475.7775pt x 466.74374pt>
+File: ../plots/qq-residuals-m2.pdf Graphic file (type pdf)
+
+<use ../plots/qq-residuals-m2.pdf>
+<../plots/acf-m2.pdf, id=158, 473.77pt x 470.75874pt>
+File: ../plots/acf-m2.pdf Graphic file (type pdf)
+
+<use ../plots/acf-m2.pdf>
+<../plots/pacf-m2.pdf, id=159, 475.7775pt x 470.75874pt>
+File: ../plots/pacf-m2.pdf Graphic file (type pdf)
+
+<use ../plots/pacf-m2.pdf>
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+(../tables/model2.txt)
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Package xcolor Warning: Incompatible color definition on input line 170.
+
+
+Overfull \hbox (9.28487pt too wide) in paragraph at lines 163--171
+ [] 
+ []
+
+
+LaTeX Warning: Reference `eq:m2' on page 4 undefined on input line 175.
+
+[4 <../plots/acf-seasondiff.pdf> <../plots/pacf-seasondiff.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 37.
+(Font)              <14.4> on input line 178.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 37.
+(Font)              <10> on input line 178.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 37.
- [3] (../../footer.tex)
-[4] (./assignment-3.aux)
+(Font)              <7> on input line 178.
+
+Overfull \hbox (17.4025pt too wide) in paragraph at lines 182--182
+[]\T1/lmr/m/n/10.95 Predictions for the months July 2001 to March 2002 are now 
+made us-ing the \T1/fvm/m/n/9 predict.Arima
+ []
+
+<../plots/training-and-prediction.pdf, id=204, 837.1275pt x 429.605pt>
+File: ../plots/training-and-prediction.pdf Graphic file (type pdf)
+
+<use ../plots/training-and-prediction.pdf>
+<../plots/test-and-prediction.pdf, id=205, 867.24pt x 505.89pt>
+File: ../plots/test-and-prediction.pdf Graphic file (type pdf)
+
+<use ../plots/test-and-prediction.pdf> [5 <../plots/residuals-m1.pdf> <../plots
+/qq-residuals-m1.pdf>]
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 208.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 208.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+(../src/loaddata.R)
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 211.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+(../src/functions.R [6 <../plots/acf-m1.pdf>] [7 <../plots/residuals-m2.pdf> <.
+./plots/qq-residuals-m2.pdf> <../plots/acf-m2.pdf> <../plots/pacf-m2.pdf>])
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 214.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+(../src/assignment3.R [8 <../plots/training-and-prediction.pdf>] [9 <../plots/t
+est-and-prediction.pdf>]
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <8> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 91.
+LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
+(Font)              scaled to size 7.19995pt on input line 91.
+ [10])
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 217.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+(../tables/model1.txt)
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+(../tables/signtest-m1.txt [11])
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 223.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+(../tables/model2.txt)
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 226.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+(../tables/signtest-m2.txt)
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+
+Package xcolor Warning: Incompatible color definition on input line 229.
+
+[12] (../../footer.tex) [13] (./assignment-3.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 8323 strings out of 493848
- 108494 string characters out of 1152824
- 239334 words of memory out of 3000000
- 11393 multiletter control sequences out of 15000+50000
- 59768 words of font info for 64 fonts, out of 3000000 for 9000
+ 9489 strings out of 493848
+ 121355 string characters out of 1152824
+ 287345 words of memory out of 3000000
+ 12511 multiletter control sequences out of 15000+50000
+ 78892 words of font info for 85 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,11n,43p,849b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,12n,43p,730b,1874s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts
-/enc/dvips/lm/lm-ec.enc}</home/anders/texmf/fonts/type1/public/bera/fvmr8a.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
-Output written on assignment-3.pdf (4 pages, 173693 bytes).
+/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/us
+r/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm
+/lm-mathsy.enc}</home/anders/texmf/fonts/type1/public/bera/fvmr8a.pfb></home/an
+ders/texmf/fonts/type1/public/bera/fvmro8a.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
+2.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on assignment-3.pdf (13 pages, 376705 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 361 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

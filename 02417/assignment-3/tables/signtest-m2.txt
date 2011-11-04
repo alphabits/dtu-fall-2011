@@ -1,0 +1,12 @@
+
+	Exact binomial test
+
+data:  sum(1 * (res[2:n] * res[1:(n - 1)] < 0)) and n - 1 
+number of successes = 30, number of trials = 66, p-value = 0.5386
+alternative hypothesis: true probability of success is not equal to 0.5 
+95 percent confidence interval:
+ 0.3314394 0.5818632 
+sample estimates:
+probability of success 
+             0.4545455 
+

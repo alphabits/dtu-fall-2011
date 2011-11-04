@@ -132,11 +132,27 @@ plot.and.save('qq-residuals-m2.pdf', 7, 7,
 
 save.sign.test(m2.r.trim, 'signtest-m2.txt')
 
-plot(1:9, m2.p$pred, type="l", ylim=c(35000, 65000))
-lines(1:9, test, type="l", col="red")
-lines(1:9, m2.p$se+m1.p.se*2, lty=2)
-lines(1:9, m2.p$se-m1.p.se*2, lty=2)
+plot.predictions = function(pred, ...) {
+    p = pred$pred
+    se = pred$se
+    plot(p, type="l", ylim=c(35000, 65000), col="red", 
+         ylab='Airline passengers', lwd=2, ...)
+    lines(test.ts, type="l")
+    lines(p + 2*se, lty=2, col="red")
+    lines(p - 2*se, lty=2, col="red")
+}
 
+plot.with.trainingset = function() {
+    plot(train.ts, ylab='Airline passengers', xlim=c(1995, 2002.25))
+    lines(m2.p$pred, col="red", lwd=2)
+}
+
+plot.and.save('test-and-prediction.pdf', 12, 7,
+              plot.predictions, m2.p, 
+              main='Predictions for (0,1,1)x(0,1,1)_12 model')
+
+plot.and.save('training-and-prediction.pdf', 12, 7,
+              plot.with.trainingset)
 
 
 plot(dat.ts)
