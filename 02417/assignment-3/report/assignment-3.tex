@@ -36,14 +36,14 @@ and shown in figure~\ref{fig:trainingset}. \par
 \end{figure}
 
 From the plot a general upward trend is recognized. This isn't surprising since
-the U.S. economy got stronger (REFERENCE!!!) in the period and therefore more
-airline passengers should be expected. Also a regular seasonal pattern can be
-seen which isn't surprising either. In the summer months e.g. we would expect
-more passengers than for the other months etc. The conclusion of these two
+the U.S. economy got stronger in the period and therefore more airline
+passengers should be expected. Also a regular seasonal pattern can be seen
+which isn't surprising either. In the summer months e.g. we would expect more
+passengers than for the other months etc. The conclusion of these two
 observations is that the time series is non-stationary and this is something
 that should be coped with during the modelling phase. To support that the time
-series is non-stationary the estimated autocorrelation function (\acf) and partial
-autocorrelation function (\pacf) are now plotted (see
+series is non-stationary the estimated autocorrelation function (\acf) and
+partial autocorrelation function (\pacf) are now plotted (see
 figure~\ref{fig:acfs-trainingset}) \par
 
 \begin{figure}[ht]
@@ -52,30 +52,34 @@ figure~\ref{fig:acfs-trainingset}) \par
         \subfigure{\includegraphics[width=70mm]{../plots/acf-trainingset.pdf}} \quad 
         \subfigure{\includegraphics[width=70mm]{../plots/pacf-trainingset.pdf}} 
     }
-    \caption{CAPTION!!!}
+    \caption{\acf\ and \pacf\ for the original time series}
     \label{fig:acfs-trainingset}
 \end{figure}
 
-Neither the \acf\ or the \pacf\ are decreasing fast toward zero which further confirms that the time serie is non-stationary (REFERENCE!!!).
+Neither the \acf\ or the \pacf\ are decreasing fast toward zero which further
+confirms that the time serie is non-stationary.
 
 
 \section*{Building the model}
 
-It is time to start building the model. Since the time series is non-stationary a natural first step is to take the first order difference of the series. With $Y_t$ the original series a new series is defined as
+It is time to start building the model. Since the time series is non-stationary
+a natural first step is to take the first order difference of the series. With
+$Y_t$ the original series a new series is defined as
 
 \begin{equation*}
     W_t = \nabla Y_t
 \end{equation*}
 
-The \acf\ and \pacf\ are calculated for this new series and are shown in figure~\ref{fig:acfs-onediff}. \par
+The \acf\ and \pacf\ are calculated for this new series and are shown in
+figure~\ref{fig:acfs-onediff}. \par
 
-\begin{figure}[ht]
+\begin{figure}[!tbh]
     \centering
     \mbox{  
         \subfigure{\includegraphics[width=70mm]{../plots/acf-onediff.pdf}} \quad 
         \subfigure{\includegraphics[width=70mm]{../plots/pacf-onediff.pdf}} 
     }
-    \caption{CAPTION!!!}
+    \caption{\acf\ and \pacf\ for the differenced series $\nabla Y_t$}
     \label{fig:acfs-onediff}
 \end{figure}
 
@@ -84,37 +88,47 @@ correlation for most lags are not significantly different from zero, except for
 the lags 6, 12, 18, 24. Also lag 6 and 18 are negative and 12 and 24 is
 positive. This confirms the 12-period seasonality that was observed in the plot
 of the original time series. A natural next step is therefore to do a seasonal
-differencing giving a new series as
+differencing giving a new series as $Z_t = \nabla_{12}W_t =
+\nabla\nabla_{12}Y_t$
 
-\begin{align*}
-    Z_t &= \nabla_{12}W_t \\
-    &= \nabla\nabla_{12}Y_t
-\end{align*}
+The \acf\ and \pacf\ of the new series are shown in
+figure~\ref{fig:acfs-seasondiff}. \par
 
-The \acf\ and \pacf\ of the new series are shown in figure~\ref{fig:acfs-seasondiff}. \par
-
-\begin{figure}[ht]
+\begin{figure}[!tbh]
     \centering
     \mbox{  
         \subfigure{\includegraphics[width=70mm]{../plots/acf-seasondiff.pdf}} \quad 
         \subfigure{\includegraphics[width=70mm]{../plots/pacf-seasondiff.pdf}} 
     }
-    \caption{CAPTION!!!}
+    \caption{\acf\ and \pacf\ for the series $\nabla\nabla_{12}Y_t$}
     \label{fig:acfs-seasondiff}
 \end{figure}
 
-It is seen that most lags of the \acf is zero, except for lag 1 and 12. For the \pacf\ the lags 1, 2, 6 and 11 are different from zero. Based on this it looks as if it is possible to model the original series $Y_t$ as a multiplicative $(p,1,q)\times(P,1,Q)_{12}$ seasonal model. Since only lag 1 and 12 are different from 0 in the \acf\ a model with $q=1$ and $Q=1$, could be tried. Ignoring lag 6 and 11 in the \pacf\ for now $p=2$ and $P=0$ is attempted.
+It is seen that most lags of the \acf\ is zero, except for lag 1 and 12. For
+the \pacf\ the lags 1, 2, 6 and 11 are different from zero. Based on this it
+looks as if it is possible to model the original series $Y_t$ as a
+multiplicative $(p,1,q)\times(P,1,Q)_{12}$ seasonal model. Since only lag 1 and
+12 are different from 0 in the \acf\ a model with $q=1$ and $Q=1$, could be
+tried. Ignoring lag 6 and 11 in the \pacf\ for now $p=2$ and $P=0$ is
+attempted.
+
+\FloatBarrier
 
 \subsection*{The $(2,1,1)\times(0,1,1)_{12}$ seasonal model}
 
-Using the \myverb{arima} function in R a $(2,1,1)\times(0,1,1)_{12}$ seasonal model is now fitted to the original time series. The resulting model is given by \par
+Using the \myverb{arima} function in R a $(2,1,1)\times(0,1,1)_{12}$ seasonal
+model is now fitted to the original time series. The resulting model is given
+by \par
 
 \begin{align*}
-    (1 + 0.20B + 0.27B^2)(1-B)(1-B^{12})Y_t &= (1-0.40B)(1-0.46B^{12})\varepsilon_t \myimp\\
-    (1 + 0.20B + 0.27B^2)Z_t &= (1-0.40B)(1-0.46B^{12})\varepsilon_t
+    (1 + 0.20B + 0.27B^2)Z_t &= (1-0.40B)(1-0.46B^{12})\varepsilon_t \myimp\\
+    (1 + 0.20B + 0.27B^2)(1-B)(1-B^{12})Y_t &= (1-0.40B)(1-0.46B^{12})\varepsilon_t 
 \end{align*}
 
-To check the model the residuals are checked to see if they resemble white noise as they should for an adequate model. First the residuals are plotted and a QQ-plot of the residuals are also created. Both are shown in figure~\ref{fig:qq-residuals-m1}. \par
+To check the model the residuals are checked to see if they resemble white
+noise as they should for an adequate model. First the residuals are plotted and
+a QQ-plot of the residuals are also created. Both are shown in
+figure~\ref{fig:qq-residuals-m1}. \par
 
 \begin{figure}[htb]
     \centering
@@ -122,38 +136,52 @@ To check the model the residuals are checked to see if they resemble white noise
         \subfigure{\includegraphics[width=70mm]{../plots/residuals-m1.pdf}} \quad 
         \subfigure{\includegraphics[width=70mm]{../plots/qq-residuals-m1.pdf}}
     }
-    \caption{CAPTION!!!}
+    \caption{Normal plot and QQ-plot of the residuals for the fitted $(2,1,1)\times(0,1,1)_{12}$ seasonal model}
     \label{fig:qq-residuals-m1}
 \end{figure}
 
-From both plots it looks as if the residuals are pretty close to white noise. Doing a sign test on the residuals gives a p-value of 0.27 which also supports that the residuals are white noise. Also the \acf\ for the residuals is plotted and shown in figure~\ref{fig:acf-m1} \par
+From both plots it looks as if the residuals are pretty close to white noise.
+Doing a sign test on the residuals gives a p-value of 0.27 which also supports
+that the residuals are white noise. The \acf\ for the residuals is plotted and
+shown in figure~\ref{fig:acf-m1} \par
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=70mm]{../plots/acf-m1.pdf}
-    \caption{CAPTION!!!}
+    \caption{\acf\ for the $(2,1,1)\times(0,1,1)_{12}$ seasonal model}
     \label{fig:acf-m1}
 \end{figure}
 
-The \acf\ also support that the residuals are white noise, since only lag 0 is different from 0. By all means it looks as if the chosen model is able to describe the original time series and so it only remains to check whether a simpler model exists that explains the data just as well. From the estimated parameters of the model along with the standard error of the estimates (see figure~\ref{fig:coeffs-m1}) it looks as if at least some of the parameters are redundant and it is expected that a simpler model exists. The primary candidate for changes is the normal AR(2)-part of the model which could possible be changed to 0 or 1. Therefore a $(0,1,1)\times(0,1,1)_{12}$ model is now tested.
+The \acf\ also supports that the residuals are white noise, since only lag 0 is
+different from 0. By all means it looks as if the chosen model is able to
+describe the original time series and so it only remains to check whether a
+simpler model exists that explains the data just as well. From the estimated
+parameters of the model along with the standard error of the estimates (see
+figure~\ref{fig:coeffs-m1}) it looks as if at least some of the parameters are
+redundant and it is expected that a simpler model exists. The primary candidate
+for changes is the normal AR(2)-part of the model which could possible be 
+changed to 0 or 1. Therefore a $(0,1,1)\times(0,1,1)_{12}$ model is now
+tested.
 
 \begin{figure}[ht]
     \centering
     \parbox{.48\textwidth}{\lstinputlisting[firstline=6,lastline=9]{../tables/model1.txt}}
-    \caption{CATION!!!}
+    \caption{Estimated coefficients and standard errors of the estimates, for the $(2,1,1)\times(0,1,1)_{12}$ seasonal model}
     \label{fig:coeffs-m1}
 \end{figure}
 
 \subsection*{The $(0,1,1)\times(0,1,1)_{12}$ seasonal model}
 
-Parameters for the $(0,1,1)\times(0,1,1)_{12}$ seasonal model is now estimated from the original time series which gives 
+Parameters for the $(0,1,1)\times(0,1,1)_{12}$ seasonal model is now estimated
+from the original time series which gives 
 
-\begin{align*}
-    (1-B)(1-B^{12})Y_t &= (1-0.66B)(1-0.45B^{12}) \myimp\\
-    Z_t &= (1-0.66B)(1-0.45B^{12})
-\end{align*}
+\begin{align}
+    Z_t &= (1-0.66B)(1-0.45B^{12}) \myimp\label{eq:m2}\\
+    (1-B)(1-B^{12})Y_t &= (1-0.66B)(1-0.45B^{12})\nonumber
+\end{align}
 
-By doing all the same model checks as for the previous model we obtain the results shown in figure~\ref{fig:diagnostics-m2}. \par
+By doing all the same model checks as for the previous model we obtain the
+results shown in figure~\ref{fig:diagnostics-m2}. \par
 
 \begin{figure}
     \centering
@@ -168,34 +196,83 @@ By doing all the same model checks as for the previous model we obtain the resul
     \mbox{%
         \subfigure{\parbox{.3\textwidth}{\lstinputlisting[firstline=6,lastline=9]{../tables/model2.txt}}}
     }
-    \caption{CAPTION!!!}
+    \caption{Diagnostic plots for the $(0,1,1)\times(0,1,1)_{12}$ seasonal model}
     \label{fig:diagnostics-m2}
 \end{figure}
 
-From the plots it seems as if the simpler $(0,1,1)\times(0,1,1)_{12}$ model is also able to explain the model and from the coefficients and their standard errors it looks as if this is as simple as the model can be. To further support that the simpler model is to be preferred the AIC is seen (see appendices \ref{app:summary-m1} and \ref{app:summary-m2}) to be lower for the simpler model. The conclusion is that the $(0,1,1)\times(0,1,1)_{12}$ model with coefficients as in equation (\ref{eq:m2}) is accepted as the best model to describe the data. The final test for the chosen model is to predict 9 months ahead in time and then compare with the actual values.
+From the plots it seems as if the simpler $(0,1,1)\times(0,1,1)_{12}$ model is
+also able to explain the model and from the coefficients and their standard
+errors it looks as if this is as simple as the model can be. To further support
+that the simpler model is to be preferred the AIC is seen (see appendices
+\ref{app:summary-m1} and \ref{app:summary-m2}) to be lower for the simpler
+model. The conclusion is that the $(0,1,1)\times(0,1,1)_{12}$ model with
+coefficients as in equation (\ref{eq:m2}) is accepted as the best model to
+describe the data. The final test for the chosen model is to predict 9 months
+ahead in time and then compare with the actual values.
 
 
 \section*{Prediction with the $(0,1,1)\times(0,1,1)_{12}$ model}
 
-\textit{Note that in this section the data that in the previous section was just called the data set is now referred to as the training set. The data set with airline passenger numbers for July 2001 to March 2002 is called the test set}.\par 
+\textit{Note that in this section the data that in the previous section was
+just called the data set is now referred to as the training set. The data set
+with airline passenger numbers for July 2001 to March 2002 is called the test
+set}.\par 
 
-Predictions for the months July 2001 to March 2002 are now made using the \myverb{predict.Arima} function in R. The method is set to Maximum Likelihood. The predictions are plotted along with the training set data and is shown in figure~\ref{fig:training-and-prediction}.\par
+Predictions for the months July 2001 to March 2002 are now made using the
+\myverb{predict.Arima} function in R. The method is set to Maximum Likelihood.
+The predictions are plotted along with the training set data and is shown in
+figure~\ref{fig:training-and-prediction}.\par
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=120mm]{../plots/training-and-prediction.pdf}
-    \caption{CAPTION!!!}
+    \caption{The training data set and model predictions combined}
     \label{fig:training-and-prediction}
 \end{figure}
 
-From the figure it looks as if the model is capturing the overall pattern in the series well. Now it is tested how well the model fits the real numbers in the test set. The predictions along with the real numbers from the test is therefore plotted in figure~\ref{fig:test-and-prediction}
+From the figure it looks as if the model is capturing the overall pattern in
+the series. Now it is tested how well the model fits the real numbers in the
+test set. The predictions along with the real numbers from the test set is
+therefore plotted in figure~\ref{fig:test-and-prediction}. \par
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=120mm]{../plots/test-and-prediction.pdf}
-    \caption{CAPTION!!!}
+    \caption{The predictions along with the real numbers from the test set}
     \label{fig:test-and-prediction}
 \end{figure}
+
+Except for the two first months the predictions are seen to be quite far from
+the true values. This is a bit surprising since it was just seen that the
+predictions captured the overall pattern very well. Comparing the predictions
+and the real data it is seen that the error is very large in the autumn 2001
+and then becomes smaller in 2002. It seems as if the real data is deviating
+from its regular pattern in the autumn 2001. \par
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=120mm]{../plots/full-data-set.pdf}
+    \caption{The full data set. (Both training set and test set)}
+    \label{fig:full-data-set}
+\end{figure}
+
+This is confirmed in figure~\ref{fig:full-data-set} where it is seen that a
+dramatic decrease in the number of airline passengers happened in september
+2001. This can of cause be explained by the terrorist attacks on the World
+Trade Center on September 11th. People were probably not that keen on flying in
+the days/weeks following 9/11. Although the 9/11 no doubt had great impact on
+the number of airline passengers, it is interesting to note that already around
+december 2001 the predictions captures the overall pattern in the real data
+very well. The mean level is just 6000-8000 too high for the predictions. The
+impact of 9/11 could probably be captured in an intervention model as described
+in \cite{hm} but this doesn't change the fact that the intervention model is
+useable only for the expected events. A statistician working for an airline
+company in June 2001 would probably have build a model comparable with the
+model in this report and would have made predictions just as wrong. For an easy
+read, popular science discussion about the extreme events and the impact for
+especially business analysis read \cite{taleb}
+
+\FloatBarrier
 
 \pagebreak
 

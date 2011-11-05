@@ -3,38 +3,9 @@ source('functions.R')
 
 SAVEPLOTS = TRUE
 
-diagnose = function(ts) {
-    par(mfrow=c(2,1))
-    acf(ts)
-    pacf(ts)
-}
-
-sign.test = function(res) {
-    n = length(res)
-    binom.test(sum(1*(res[2:n]*res[1:(n-1)] < 0)), n-1)
-}
-
-save.sign.test = function(res, filename) {
-    sink(sprintf('../tables/%s', filename))
-    print(sign.test(res))
-    sink()
-}
-
-qq = function(model) {
-    plot.qq.res(residuals(model), model$sigma2)
-}
-
-plot.qq.res = function(res, sigma) {
-    qqnorm(res)
-    lines((-4):4,((-4):4)*sqrt(sigma), type="l", lwd=3, col='red')
-}
-
-save.model.summary = function(model, filename) {
-    sink(sprintf('../tables/%s', filename))
-    print(model)
-    sink()
-}
-
+#############################
+### Differencing the data ###
+#############################
 
 plot.and.save('trainingset.pdf', 12, 7,
               plot, train.ts, main='Airline passengers', xlab='Time', 
@@ -44,7 +15,6 @@ plot.and.save('acf-trainingset.pdf', 7, 7,
 plot.and.save('pacf-trainingset.pdf', 7, 7,
               pacf, train, main='PACF for the time series')
 
-
 train.d = diff(train)
 plot.and.save('acf-onediff.pdf', 7, 7,
               acf, train.d, lag.max=25, 
@@ -52,7 +22,6 @@ plot.and.save('acf-onediff.pdf', 7, 7,
 plot.and.save('pacf-onediff.pdf', 7, 7,
               pacf, train.d, lag.max=25,
               main='PACF for the first order differenced series')
-
 
 train.d2 = diff(train.d, lag=12)
 plot.and.save('acf-seasondiff.pdf', 7, 7,
@@ -63,6 +32,10 @@ plot.and.save('pacf-seasondiff.pdf', 7, 7,
               main='PACF for the first order and seasonal differenced series')
 plot(train.d2, type="l")
 
+
+###############
+### Model 1 ###
+###############
 
 m1 = arima(train.ts, order=c(2,1,1), 
            seasonal=list(order=c(0,1,1), period=12), 
@@ -94,7 +67,6 @@ hist(m1.r.trim, probability=T, col='blue')
 # http://en.wikipedia.org/wiki/Ljung-Box_test 
 tsdiag(m1)
 
-
 sink('../tables/aic-scores.txt')
 for (i in 0:5) {
     for (j in 1:3) {
@@ -106,8 +78,9 @@ for (i in 0:5) {
 }
 sink()
 
-
-
+###############
+### Model 2 ###
+###############
 
 m2 = arima(train.ts, order=c(0,1,1), seasonal=list(order=c(0,1,1), period=12), 
            include.mean=T, method="ML")
@@ -136,15 +109,16 @@ plot.predictions = function(pred, ...) {
     p = pred$pred
     se = pred$se
     plot(p, type="l", ylim=c(35000, 65000), col="red", 
-         ylab='Airline passengers', lwd=2, ...)
+         ylab='Airline passengers', lwd=3, ...)
     lines(test.ts, type="l")
     lines(p + 2*se, lty=2, col="red")
     lines(p - 2*se, lty=2, col="red")
 }
 
 plot.with.trainingset = function() {
-    plot(train.ts, ylab='Airline passengers', xlim=c(1995, 2002.25))
-    lines(m2.p$pred, col="red", lwd=2)
+    plot(train.ts, ylab='Airline passengers', xlim=c(1995, 2002.25),
+         main='Training set and predictions from (0,1,1)x(0,1,1)_12 model')
+    lines(m2.p$pred, col="red", lwd=3)
 }
 
 plot.and.save('test-and-prediction.pdf', 12, 7,
@@ -154,6 +128,7 @@ plot.and.save('test-and-prediction.pdf', 12, 7,
 plot.and.save('training-and-prediction.pdf', 12, 7,
               plot.with.trainingset)
 
-
-plot(dat.ts)
+plot.and.save('full-data-set.pdf', 12, 7,
+              plot, dat.ts, main='The complete time series',
+              ylab='Airline passengers')
 
