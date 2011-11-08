@@ -1,0 +1,98 @@
+\def\assignmenttitle{Assignment 2}
+\def\assignmentdate{08-12-2011}
+\def\assignmentnumber{2}
+
+\input{../../header}
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Question 1: Fitting to Air Pollution Data}
+
+In this question we are going to fit sums of sines and cosines to the Air
+Pollution Data given in the assignment. First a function \myverb{NOfit} that
+calculates the parameters and the residuals for the fit is created.
+
+\subsection*{Question 1.1}
+
+The function should have the call \myverb{[x\_star, r\_star] = NOfit(t,y,n)},
+but for convenience it is written to also return the design matrix $A$. The
+function \myverb{NOfit} relies on \myverb{get\_A} to calculate the actual
+design matrix. The function \myverb{get\_A} is used later when the fits are
+plotted.
+
+\lstinputlisting[caption={\myverb{NOfit} function to fit sine, cosines of order \myverb{n}}]{../src/NOfit.m}
+
+\lstinputlisting[caption={Helper function \myverb{get\_A} used to generate design matrix}]{../src/get_A.m}
+
+\subsection*{Question 1.2}
+
+\coderemark{ex12} 
+
+The \myverb{NOfit} function is now tested. Using the data given in the
+assignment text a 3rd order cosine is fitted which gives the model. 
+
+\begin{equation*}
+    \input{../tables/3rd-order-fitted-model}
+\end{equation*}
+
+To confirm the implementation of \myverb{NOfit} the residual 2-norm is checked
+and it is the expected $\norm{\myvec{r^*}}_2=292.558$. Since the implementation
+seems to be right, the fitted model is plotted along with the data in
+figure~\ref{fig:3rd-order-fit} .\par
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=70mm]{../media/3rd-order-fit.pdf}
+    \caption{CAPTION!!!}
+    \label{fig:3rd-order-fit}
+\end{figure}
+
+\subsection*{Question 1.3}
+
+\coderemark{ex13}
+
+The optimal order of the fit must be determined. Using the test for random
+signs and the test for correlation, for the orders $n=3,5,7,9,11,13$ gives the
+results shown in figure~\ref{fig:ex13}.
+
+\begin{figure}
+    \centering
+    \mbox{  \subfigure{\includegraphics[width=70mm]{../media/order-determination-3.pdf}} \quad 
+            \subfigure{\includegraphics[width=70mm]{../media/order-determination-9.pdf}}}
+    \mbox{\vspace{5mm}}
+    \mbox{  \subfigure{\includegraphics[width=70mm]{../media/order-determination-5.pdf}} \quad 
+            \subfigure{\includegraphics[width=70mm]{../media/order-determination-11.pdf}}}
+    \mbox{\vspace{5mm}}
+    \mbox{  \subfigure{\includegraphics[width=70mm]{../media/order-determination-7.pdf}} \quad 
+            \subfigure{\includegraphics[width=70mm]{../media/order-determination-13.pdf}}}
+    \caption{CAPTION!!!}
+    \label{fig:ex13}
+\end{figure}
+
+\pagebreak
+\renewcommand\thesection{\Alph{section}}
+
+
+\section{Appendices}
+
+All \matlab\ source code is included in the appendices. All the source code
+including the LaTex code used for the report can also be found at
+\url{https://github.com/alphabits/dtu-fall-2011/tree/master/02610/assignment-2}.
+
+\subsection{Question 1.2}\label{app:ex12}
+\lstinputlisting[caption={ex12.m}]{../src/ex12.m}
+
+\subsection{Question 1.3}\label{app:ex13}
+\lstinputlisting[caption={ex13.m}]{../src/ex13.m}
+
+\subsection{Helper functions}\label{app:helpers}
+\lstinputlisting[caption={plot\_fit.m}]{../src/plot_fit.m}
+\lstinputlisting[caption={plot\_fit\_with\_res\_analysis.m}]{../src/plot_fit_with_res_analysis.m}
+
+\pagebreak
+\input{../../footer}
+
+\end{document}
