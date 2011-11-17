@@ -4,3 +4,6 @@
 *.pyc
 pythonenv/*
 doc/*
+02417/*/data/*.rda
+*.log
+*.aux

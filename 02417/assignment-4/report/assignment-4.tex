@@ -1,0 +1,62 @@
+\def\assignmenttitle{Modelling and Predicting the Heat Consumption}
+\def\assignmentnumber{4}
+\def\assignmentdate{17-11-2011}
+
+\input{../../header}
+
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\maketitle
+
+In this report models describing the heat consumption in the VEKS system are
+build. As data for the models, a year of hourly measurements of the heat
+consumption along with various climate variables are given. First a simple
+model, based only on the heat consumption measurements, is build. Then a more
+complex model that incorporates information from the climate data is build. For
+both models 1- and 6-hour predictions of the heat consumption are made and the
+performance is checked by comparing the predictions with the actual values.
+
+\section*{Building the simple model}
+
+In the simple model only the data of past heat consumption is used. First the
+data is plotted and shown in figure~\ref{fig:hc-ts}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=120mm]{../plots/hc-ts.pdf}
+    \caption{CAPTION!!!}
+    \label{fig:hc-ts}
+\end{figure}
+
+From the plot an upward trend is seen and high frequency oscillations are also
+noticed. To further investigate the data the \acf\ and the \pacf\ for the heat
+consumption series are plotted and shown in figure~\ref{fig:hc-acfs}.
+
+\begin{figure}
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/acf-hc.pdf}} \quad 
+          \subfigure{\includegraphics[width=70mm]{../plots/pacf-hc.pdf}}}
+    \caption{CAPTION!!!}
+    \label{fig:hc-acfs}
+\end{figure}
+
+
+
+\pagebreak
+
+\renewcommand\thesection{\Alph{section}}
+\section{Appendices}
+
+All R code used for this assignment is included here. All source code incl.
+latex code for this report can be found at
+{\small\url{https://github.com/alphabits/dtu-fall-2011/tree/master/02417/assignment-4}}
+
+%\subsection{Load data script}
+%\lstinputlisting{../src/loaddata.R}
+
+\pagebreak
+
+\input{../../footer}
+
+\end{document}
