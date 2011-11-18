@@ -1,0 +1,10 @@
+
+Call:
+model.fun(x = ..1, order = ..2, seasonal = ..3)
+
+Coefficients:
+         ar1      ar2      ma1     sma1     sma2     sma3
+      1.0297  -0.2122  -0.9007  -0.9126  -0.0304  -0.0104
+s.e.  0.0276   0.0185   0.0225   0.0186   0.0238   0.0193
+
+sigma^2 estimated as 1942:  log likelihood = -15517.49,  aic = 31048.99
