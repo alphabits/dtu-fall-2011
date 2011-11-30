@@ -18,8 +18,9 @@ doc = build_docs
 def generate_cropped_pdfs(globstr):
     files = glob(globstr)
     for f in files:
+        ext = f.rsplit(".")[1]
         local('ps2pdf {0}'.format(f))
-        local('pdfcrop {0} {0}'.format(f.replace('eps', 'pdf')))
+        local('pdfcrop {0} {0}'.format(f.replace(ext, 'pdf')))
 gcp = generate_cropped_pdfs
 
 def crop_pdfs(globstr):

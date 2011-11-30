@@ -72,6 +72,38 @@ results shown in figure~\ref{fig:ex13}.
     \label{fig:ex13}
 \end{figure}
 
+
+\section*{Question 2}
+
+In this problem a chemical reaction rate is modelled as a function of the concentration of a substrate. The predicted reaction rate is modelled as
+
+\begin{equation*}
+    \hat{y} = \frac{\theta_1 x}{\theta_2 + x}
+\end{equation*}
+
+where $x$ is the concentration and $\theta_1$ and $\theta_2$ are the parameters of interest. Given the 12 measurements of reaction rate and corresponding concentration we then model the measured reaction rate $y$ by
+
+\begin{equation*}
+    y = \hat{y} + e
+\end{equation*}
+
+where $e\sim N(0,\sigma^2)$ and $\sigma^2$ is unknown.
+
+\subsection*{Question 2.1}
+
+\coderemark{ex21}
+
+First a plot of the experimental data $(x,y)$ and another plot of the inverse data $(1/x, 1/y)$ are created and shown in figure~\ref{fig:ex2-plot-data}. From the plots it do look as if a straight line could be fitted to the inverse data.
+
+\begin{figure}
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{../media/ex21-plot.pdf}} \quad 
+          \subfigure{\includegraphics[width=70mm]{../media/ex21-plot-inv.pdf}}}
+    \caption{Plot of experimental data $(x,y)$ and inverse data $(1/x, 1/y)$ for question 2}
+    \label{fig:ex2-plot-data}
+\end{figure}
+
+
 \pagebreak
 \renewcommand\thesection{\Alph{section}}
 
@@ -87,6 +119,9 @@ including the LaTex code used for the report can also be found at
 
 \subsection{Question 1.3}\label{app:ex13}
 \lstinputlisting[caption={ex13.m}]{../src/ex13.m}
+
+\subsection{Question 2.1}\label{app:ex13}
+\lstinputlisting[caption={ex21.m}]{../src/ex21.m}
 
 \subsection{Helper functions}\label{app:helpers}
 \lstinputlisting[caption={plot\_fit.m}]{../src/plot_fit.m}
