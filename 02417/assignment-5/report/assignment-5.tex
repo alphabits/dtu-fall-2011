@@ -4,6 +4,20 @@
 \def\githuburl{\small\url{https://github.com/alphabits/dtu-fall-2011/tree/master/02417/assignment-5}}
 \def\githuburlfoot{\footnotesize\url{https://github.com/alphabits/dtu-fall-2011/tree/master/02417/assignment-5}}
 
+\def\myepsilon{\varepsilon}
+\def\erm{\myepsilon_{rt}}
+\def\etm{\myepsilon_{\theta t}}
+\def\erp{\myepsilon^p_{rt}}
+\def\etp{\myepsilon^p_{\theta t}}
+\def\evp{\myepsilon^p_{v_\theta t}}
+\def\vecX{\myvec{X}}
+\def\vecYt{\myvec{Y}_t}
+\def\vece{\myvec{e}}
+\def\vecSigma{\myvec{\Sigma}}
+\def\vecA{\myvec{A}}
+\def\vecC{\myvec{C}}
+
+
 \input{../../header}
 
 %%% BEGIN DOCUMENT
@@ -11,6 +25,121 @@
 
 \maketitle
 
+In this report the trajectory of an orbiting satellite will be reconstructed and predicted, based on 50 measurements $\{(r_t^m, \theta_t^m)\}_{t=1}^{50}$ of the position of the satellite given in polar coordinates. Due to imprecision in the measurement process, the real position of the satellite $(r_t^p, \theta_t^p)$ is related to the measurements by
+\begin{align*}
+    r_t^m &= r_t^p + \erm \\
+    \theta_t^m &= \theta_t^p + \etm
+\end{align*}
+where $\erm\sim N(0,2000^2)$, $\etm\sim N(0,0.03^2)$ and $\erm$, $\etm$ are independent.
+
+\section*{Formulating a model}
+To reconstruct and predict the trajectory of the satellite, we will create a state space model. The state vector is defined as
+\begin{equation*}
+    \vecX_t = \begin{pmatrix}
+        r^p_t \\
+        \theta^p_t \\
+        v^p_{\theta t}
+    \end{pmatrix}
+\end{equation*}
+where $r^p_{t}$ is the true distance to the satellite, $\theta^p_t$ is the angle, and $v^p_{\theta t}$ is the angle velocity. It is assumed that the trajectory is well approximated by a circle, but to include deviations from a perfect circle, we define the random deviations
+\begin{equation*}
+    \erp \sim N(0,500^2), \quad \etp\sim N(0,0.005^2), \quad \evp \sim N(0, 0.005^2)
+\end{equation*}
+and then model the dynamics of the state vector, by the equations
+\begin{align*}
+    r^p_t &= r^p_{t-1} + \erp \\
+    \theta^p_t &= \theta^p_{t-1} + v^p_{t-1} + \etp \\
+    v^p_t &= v^p_{t-1} + \evp
+\end{align*}
+\todo{Comment on model formulation!!!}
+To write the state space model on matrix form, we define the measurement vector by
+\begin{equation*}
+    \vecYt = \begin{pmatrix}
+        r^m_t \\
+        \theta^m_t
+    \end{pmatrix}
+\end{equation*}
+and two random vectors by
+\begin{equation*}
+    \vece_1 = \begin{pmatrix}
+        \erp \\
+        \etp \\
+        \evp
+    \end{pmatrix}, \quad \vece_2 = \begin{pmatrix}
+        \erm \\
+        \etm
+    \end{pmatrix}
+\end{equation*}
+Since $\erp,\etp$ and $\evp$ are independent, and also $\erm$ and $\etm$ are independent
+\begin{equation*}
+    \vecSigma_1 = \Var{\vece_1} = \begin{bmatrix}
+        500^2 & 0 & 0 \\
+        0 & 0.005^2 & 0 \\
+        0 & 0 & 0.005^2
+    \end{bmatrix}, \quad \vecSigma_2 = \Var{\vece_2} = \begin{bmatrix}
+        2000^2 & 0 \\
+        0 & 0.03^2
+    \end{bmatrix}
+\end{equation*}
+By setting
+\begin{equation*}
+    \vecA = \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+    \end{bmatrix}, \quad \vecC = \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0
+    \end{bmatrix}
+\end{equation*}
+the state space model can now be expressed by the system equation
+\begin{equation*}
+    \vecX_t = \vecA\vecX_{t-1} + \vece_1
+\end{equation*}
+and the observation equation
+\begin{equation*}
+    \vecYt = \vecC\vecX_t + \vece_2
+\end{equation*}
+
+Using the defined model the trajectory can now be reconstructed and predicted by using the Kalman filter. To actually use the Kalman filter, it needs to be implemented.
+
+\section*{Implementing the Kalman filter}
+In this section the Kalman filter is implemented in R. The implementation (see listing~\ref{lst:kalman}) is a regular R script that first loads the data in the variable \myverb{dat}
+
+\vspace{3mm}
+\lstinputlisting[caption={Implementation of the Kalman filter},label=lst:kalman]{../src/kalman.R}
+
+
+\section*{Reconstructing the trajectory}
+In this section the implementation of the Kalman filter is used to reconstruct the trajectory of the satellite.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=70mm]{../plots/reconstruction.pdf}
+    \caption{CAPTION XXX}
+    \label{fig:reconstruction}
+\end{figure}
+
+\section*{Predicting the trajectory}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=70mm]{../plots/all-predictions.pdf}
+    \caption{CAPTION XXX}
+    \label{fig:all-predictions}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/prediction-1.pdf}} \quad 
+            \subfigure{\includegraphics[width=70mm]{../plots/prediction-2.pdf}}}
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/prediction-3.pdf}} \quad 
+            \subfigure{\includegraphics[width=70mm]{../plots/prediction-4.pdf}}}
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/prediction-5.pdf}} \quad 
+            \subfigure{\includegraphics[width=70mm]{../plots/prediction-6.pdf}}}
+    \caption{CAPTION}
+    \label{fig:label}
+\end{figure}
 
 \FloatBarrier
 
