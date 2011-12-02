@@ -1,4 +1,5 @@
 source('loaddata.R')
+source('functions.R')
 
 
 n = length(dat[,1])

@@ -32,6 +32,13 @@ In this report the trajectory of an orbiting satellite will be reconstructed and
 \end{align*}
 where $\erm\sim N(0,2000^2)$, $\etm\sim N(0,0.03^2)$ and $\erm$, $\etm$ are independent.
 
+\begin{figure}[!th]
+    \centering
+    \includegraphics[width=70mm]{../plots/data.pdf}
+    \caption{Plot of measured satellite position in cartesian coordinates}
+    \label{fig:data}
+\end{figure}
+
 \section*{Formulating a model}
 To reconstruct and predict the trajectory of the satellite, we will create a state space model. The state vector is defined as
 \begin{equation*}
@@ -45,13 +52,13 @@ where $r^p_{t}$ is the true distance to the satellite, $\theta^p_t$ is the angle
 \begin{equation*}
     \erp \sim N(0,500^2), \quad \etp\sim N(0,0.005^2), \quad \evp \sim N(0, 0.005^2)
 \end{equation*}
-and then model the dynamics of the state vector, by the equations
+and then model the dynamics of the state vector by the equations
 \begin{align*}
     r^p_t &= r^p_{t-1} + \erp \\
     \theta^p_t &= \theta^p_{t-1} + v^p_{t-1} + \etp \\
     v^p_t &= v^p_{t-1} + \evp
 \end{align*}
-\todo{Comment on model formulation!!!}
+From these equation it is seen, that we model the radius and angle-velocity to be constant, as they would be for prefect uniform circular motion.
 To write the state space model on matrix form, we define the measurement vector by
 \begin{equation*}
     \vecYt = \begin{pmatrix}
@@ -70,7 +77,7 @@ and two random vectors by
         \etm
     \end{pmatrix}
 \end{equation*}
-Since $\erp,\etp$ and $\evp$ are independent, and also $\erm$ and $\etm$ are independent
+Since $\erp,\etp$ and $\evp$ are independent the covariance between any two of them is 0. $\erm$ and $\etm$ are also independent and therefore the covariance between them is also 0. We then get
 \begin{equation*}
     \vecSigma_1 = \Var{\vece_1} = \begin{bmatrix}
         500^2 & 0 & 0 \\
@@ -104,41 +111,88 @@ and the observation equation
 Using the defined model the trajectory can now be reconstructed and predicted by using the Kalman filter. To actually use the Kalman filter, it needs to be implemented.
 
 \section*{Implementing the Kalman filter}
-In this section the Kalman filter is implemented in R. The implementation (see listing~\ref{lst:kalman}) is a regular R script that first loads the data in the variable \myverb{dat}
+The implementation of the Kalman filter is shown in listing~\ref{lst:kalman}. It is a function that takes the model defining parameters \myverb{A,B,C,u,S.1} and \myverb{S.2}, the initialization parameters \myverb{mu0} and \myverb{V0}, and the observations \myverb{Y}. The code is more or less self explaining and is based on equation 10.73-10.80 in \cite{hm}. The function returns a list with the reconstructed state vector for each iteration, the final covariance matrix for the one-step prediction of the state vector, the Kalman Gain from each iteration and the final one-step prediction of the state vector. 
 
 \vspace{3mm}
-\lstinputlisting[caption={Implementation of the Kalman filter},label=lst:kalman]{../src/kalman.R}
+\lstinputlisting[caption={Implementation of the Kalman filter},label=lst:kalman]{../src/kalmanfilter.R}
 
 
 \section*{Reconstructing the trajectory}
-In this section the implementation of the Kalman filter is used to reconstruct the trajectory of the satellite.
+In this section the implementation of the Kalman filter is used to reconstruct the trajectory of the satellite. To run the Kalman filter the initial parameters $\myvec{\mu}_0$ and $\myvec{V}_0$ needs to be defined. As long as there are many observations, the result isn't very sensitive to the initial conditions. We set
+\begin{equation*}
+    \myvec{\mu}_0 = \begin{pmatrix}
+        r^m_1 \\
+        \theta^m_1 \\
+        0
+    \end{pmatrix}, \quad \myvec{V}_0 = \begin{bmatrix}
+        0, 0, 0 \\
+        0, 0, 0 \\
+        0, 0, 0
+    \end{bmatrix}
+\end{equation*}
+and then run the Kalman implementation from the previous section\footnote{See \appref{runkalman} for the actual code that runs the Kalman filter}. Since the implementation returns the reconstructed state vector for each iteration, the reconstructed trajectory can easily be plotted\footnote{See \appref{reconstruct} for the code} as shown in figure~\ref{fig:reconstruction}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=70mm]{../plots/reconstruction.pdf}
-    \caption{CAPTION XXX}
+    \caption{The reconstructed trajectory calculated with the Kalman filter}
     \label{fig:reconstruction}
 \end{figure}
 
-\section*{Predicting the trajectory}
+It is seen that the Kalman filter is pretty robust even when the data contains large errors. From the output of the Kalman filter function it is seen that the Kalman Gain converges to a constant value after about 30 iterations which is expected.
 
-\begin{figure}[ht]
+
+\section*{Predicting the trajectory}
+The satellite position for the 6 next time steps should now be predicted. The Kalman filter only gives one-step predictions, but using the equations
+\begin{align}
+    \widehat{\myvec{X}}_{t+k+1|t} &= \myvec{A}\widehat{\myvec{X}}_{t+k|t} + \myvec{B}\myvec{u}_{t+k} \label{eq:ksteppred}\\
+    \myvec{\Sigma}^{xx}_{t+k+1|t} &= \myvec{A}\myvec{\Sigma}^{xx}_{t+k|t}\myvec{A}^T + \myvec{\Sigma}_1 \label{eq:kstepcovar}
+\end{align}
+the predictions for later steps can also be found. From the equations and the definition of $\myvec{A}$ it is clear that the prediction of $r^p_{t+k}$ is constant for any $k>0$. To get all predictions of $r^p_{t+k}$ and $\theta^p_{t+k}$ the Kalman filter is first run on the data. The output from the Kalman filter gives the 1-step prediction, and then iterating equation (\ref{eq:ksteppred}) and (\ref{eq:kstepcovar}) 5 times gives the $2,3\dots,6$-step predictions. The results are shown in table~\ref{tbl:predictions}
+
+\begin{table}
     \centering
-    \includegraphics[width=70mm]{../plots/all-predictions.pdf}
-    \caption{CAPTION XXX}
+    \begin{tabular}{lccc}
+        $k$ & $\widehat{r}_{50+k|50}$ & $1.96\sigma_{\hat{r}}$ & 95\% CI \\\hline
+        \input{../tables/r-predictions}\\\hline
+    \end{tabular}
+    \hspace{0.5mm}
+    \begin{tabular}{lccc}
+        $k$ & $\widehat{\theta}_{50+k|50}$ & $1.96\sigma_{\hat{\theta}}$ & 95\% CI \\\hline
+        \input{../tables/theta-predictions}\\\hline
+    \end{tabular}
+    \caption{Prediction and confidence intervals for $\widehat{r}$ and $\widehat{\theta}$}
+    \label{tbl:predictions}
+\end{table}
+
+To visualize the predictions a plot is made and shown in figure~\ref{fig:all-predictions}. From the figure it is seen (confirmed, since we already knew it) how the predictions lie equally spaced on a perfect circle. This is probably not how the actual position is going to end up, so we would like to give an idea of the uncertainty of the predictions.
+
+\begin{figure}[!ht]
+    \centering
+    \mbox{\subfigure{\includegraphics[width=70mm]{../plots/all-predictions.pdf}} \quad 
+            \subfigure{\includegraphics[width=70mm]{../plots/all-predictions-magnified.pdf}}}
+    \caption{Predictions of the satellite position 6 step ahead}
     \label{fig:all-predictions}
 \end{figure}
 
-\begin{figure}
+The uncertainty is already given in table~\ref{tbl:predictions}, but to give an better idea the 6 predictions are plotted on separate plots including their respective confidence intervals. The plots are shown in figure~\ref{fig:predictions-with-conf-1} and figure~\ref{fig:predictions-with-conf-2} and it is seen how the uncertainty grows larger for each time step away from the time of prediction. This was expected both intuitively and from equation (\ref{eq:kstepcovar}), but it is still worth noticing that the right side of the 6-step prediction confidence interval is almost identical to the right side of the 1-step prediction confidence interval. With a 95\% confidence, we can't reject the possibility that the satellite will be in the same spot 1 and 6 time steps ahead. Still the theory tells us that these are the best prediction we can give, as long as we don't get any new observations.
+
+\begin{figure}[!hb]
     \centering
     \mbox{\subfigure{\includegraphics[width=70mm]{../plots/prediction-1.pdf}} \quad 
             \subfigure{\includegraphics[width=70mm]{../plots/prediction-2.pdf}}}
     \mbox{\subfigure{\includegraphics[width=70mm]{../plots/prediction-3.pdf}} \quad 
             \subfigure{\includegraphics[width=70mm]{../plots/prediction-4.pdf}}}
+    \caption{Plots of the 1-,2-,3-, and 4-step predictions including confidence intervals. 5- and 6-step are on the next page.}
+    \label{fig:predictions-with-conf-1}
+\end{figure}
+
+\begin{figure}
+    \centering
     \mbox{\subfigure{\includegraphics[width=70mm]{../plots/prediction-5.pdf}} \quad 
             \subfigure{\includegraphics[width=70mm]{../plots/prediction-6.pdf}}}
-    \caption{CAPTION}
-    \label{fig:label}
+    \caption{Plots of the 5-, and 6-step predictions including confidence intervals}
+    \label{fig:predictions-with-conf-2}
 \end{figure}
 
 \FloatBarrier
@@ -151,8 +205,23 @@ In this section the implementation of the Kalman filter is used to reconstruct t
 All R code used for this assignment is included here. All source code incl.
 latex code for this report can be found at \githuburl
 
-%\subsection{Load data script}
-%\lstinputlisting{../src/loaddata.R}
+\subsection{Load data script}
+\lstinputlisting{../src/loaddata.R}
+
+\subsection{Helper functions}
+\lstinputlisting{../src/functions.R}
+
+\subsection{Plot data script}
+\lstinputlisting{../src/plotdata.R}
+
+\subsection{Running the Kalman filter}\label{app:runkalman}
+\lstinputlisting{../src/runkalman.R}
+
+\subsection{Plot reconstructed trajectory}\label{app:reconstruct}
+\lstinputlisting{../src/reconstruction.R}
+
+\subsection{Predicting trajectory}\label{app:predict}
+\lstinputlisting{../src/predict.R}
 
 \pagebreak
 
