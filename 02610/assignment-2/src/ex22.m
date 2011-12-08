@@ -23,7 +23,7 @@ colorbar;
 hold on;
 plot(theta_lin(1), theta_lin(2), 'r.', 'MarkerSize', 20);
 hold off;
-%saveeps('../media/ex22-contour-linear.eps');
+saveeps('../media/ex22-contour-linear.eps');
 
 
 [xs, info, perf] = marquardt(@residual_jacobian_ex22, theta_lin, [0 1e-7 1e-12 1e3], x, y);
@@ -38,7 +38,7 @@ ex2_plot_model_with_data(theta_lin, x, y, 'g-');
 hold on;
 ex2_plot_model_with_data(theta_marq, x, y, 'b-');
 hold off;
-%saveeps('../media/ex22-models-with-data.eps');
+saveeps('../media/ex22-models-with-data.eps');
 
 
 contour(X_con, Y_con, phi, v, 'linewidth', 1);
@@ -49,5 +49,5 @@ colorbar;
 hold on;
 plot(theta_marq(1), theta_marq(2), 'r.', 'MarkerSize', 20);
 hold off;
-%saveeps('../media/ex22-contour-marquardt.eps');
+saveeps('../media/ex22-contour-marquardt.eps');
 

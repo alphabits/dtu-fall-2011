@@ -10,4 +10,9 @@ for i=1:11
     sstars(i) = norm(r)/sqrt(m-n);
 end
 
-plot(3:2:23, sstars, 'or');
+plot(3:2:23, sstars, 'r.', 'MarkerSize', 16);
+set(gca, 'FontSize', 16);
+xlabel('n');
+ylabel('s^*');
+title('Estimated standard deviation for different n');
+saveeps('../media/ex14-sd.eps');

@@ -49,7 +49,7 @@ figure~\ref{fig:3rd-order-fit} .\par
 \begin{figure}[ht]
     \centering
     \includegraphics[width=70mm]{../media/3rd-order-fit.pdf}
-    \caption{CAPTION!!!}
+    \caption{3rd order fitted model $M$}
     \label{fig:3rd-order-fit}
 \end{figure}
 
@@ -71,7 +71,7 @@ results shown in figure~\ref{fig:ex13}.
     \mbox{\vspace{5mm}}
     \mbox{  \subfigure{\includegraphics[width=70mm]{../media/order-determination-7.pdf}} \quad 
             \subfigure{\includegraphics[width=70mm]{../media/order-determination-13.pdf}}}
-    \caption{CAPTION!!!}
+    \caption{Fitted models for $n=3,5,7,9,11,13$ including residual test results}
     \label{fig:ex13}
 \end{figure}
 
@@ -134,7 +134,7 @@ and from these parameter estimates we plot the model $\hat{y}$ along with the or
     \centering
     \includegraphics[width=80mm]{../media/ex21-linear-model.pdf}
     \caption{Plot of original data and the model $\hat{y}$, with parameters estimated from the linear model (\ref{eq:ex21-linear-model})}
-    \label{}
+    \label{fig:data-and-linear-model}
 \end{figure}
 
 From the figure it is seen that the fitted model isn't explaining the data perfect. The problem is that by fitting $\frac{1}{y}$ linear on $\frac{1}{x}$ we implicitly assume that $\frac{1}{y}$ can be written as a sum of a linear model of $\frac{1}{x}$ and an gaussian error term. This is the same as assuming that $\frac{1}{y}$ is normal distributed, but from our original model (\ref{eq:ex21-base-model}) we get that $y$ is normal distributed with mean $\hat{y}$ and variance $\sigma^2$. We therefore found the parameter estimate $\theta_{LS}^*$ by assuming that the inverse of a normal distributed variable, is also normal distributed. This isn't correct and as a result we found that the fit wasn't perfect.
@@ -142,24 +142,24 @@ From the figure it is seen that the fitted model isn't explaining the data perfe
 
 \subsection*{Question 2.2}
 
+\coderemark{ex22}
+
 In this question the parameters $\theta$ is found by solving the non-linear least squares problem.
 
-\begin{equation*}
+\begin{equation}\label{eq:ex22-phi}
     \phi(\theta) = \half\sum_{i=1}^n \norm{y_i - f(\theta; x_i)}_2^2
-\end{equation*}
+\end{equation}
 
 First a contour plot of $\phi(\theta)$ is created and $\theta_{LS}^*$ is shown with a dot in the plot. The contour plot is shown in figure~\ref{fig:ex22-contour-linear} and it looks as if there are values for $\theta$ that gives smaller values for $\phi(\theta)$ than $\theta_{LS}^*$.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=70mm]{../media/ex22-contour-linear.pdf}
-    \caption{CAPTION XXX}
+    \caption{Contour plot of $\phi$ defined in (\ref{eq:ex22-phi}) with $\theta_{LS}^*$ shown}
     \label{fig:ex22-contour-linear}
 \end{figure}
 
-To find an better estimate than $\theta_{LS}^*$, a nonlinear least squares method is used instead of the linear least squares method from the previous question. Specifically the Marquardt algorithm is used to find $\theta^*$ {\textcolor{red}{COMMENT ON ALGORITHM!!!}}.
-
-By running the marquardt function the parameter estimate $\theta^*$ is found as
+To find an better estimate than $\theta_{LS}^*$, a nonlinear least squares method is used instead of the linear least squares method from the previous question. Specifically the Levenberg-Marquardt (L-M) algorithm is used to find $\theta^*$. By running the L-M algorithm, the parameter estimate $\theta^*$ is found as
 
 \begin{equation*}
     \input{../tables/param-estimates-ex22}
@@ -182,7 +182,7 @@ The optimal estimate $\theta^*$ is now plotted in a contour plot of $\phi(\theta
 \begin{figure}[ht]
     \centering
     \includegraphics[width=70mm]{../media/ex22-contour-marquardt.pdf}
-    \caption{CAPTION XXX}
+    \caption{Contour plot of $\phi$ defined in (\ref{eq:ex22-phi}) with $\theta^*$ shown}
     \label{fig:ex22-contour-marquardt}
 \end{figure}
 
@@ -191,12 +191,14 @@ To better visualize the improvement the Michaelis-Menten model is now plotted fo
 \begin{figure}[ht]
     \centering
     \includegraphics[width=70mm]{../media/ex22-models-with-data.pdf}
-    \caption{CAPTION XXX}
+    \caption{Plot of linear and non-linear fitted models}
     \label{fig:ex22-models}
 \end{figure}
 
 
 \section*{Question 2.3}
+
+\coderemark{ex23}
 
 We continue to work with the chemical reaction used in question 2.1 and 2.2, but instead of measurements of reaction rate and concentration, we now have measurements of concentrations $x_i$ at different times $t_i$. Denoting the real concentration at time $t$ as $x(t)$ the measured concentration is modelled as
 \begin{equation*}
@@ -220,7 +222,7 @@ using the measurements in \myverb{MMBatchData.mat}. The data is plotted in figur
 \begin{figure}[ht]
     \centering
     \includegraphics[width=80mm]{../media/ex23-data.pdf}
-    \caption{CAPTION XXX}
+    \caption{Plot of measurements of concentration for different times}
     \label{fig:ex23-data}
 \end{figure}
 
@@ -233,19 +235,19 @@ We are now able to compute $\hat{y}(\theta; t_i)$ and therefore we can also comp
 \begin{figure}[ht]
     \centering
     \includegraphics[width=80mm]{../media/ex23-contour.pdf}
-    \caption{CAPTION XXX}
+    \caption{Contour plot for $\phi$ defined in (\ref{eq:ex23-min})}
     \label{fig:ex23-contour}
 \end{figure}
 
-To actually find a minimum for $\phi(\theta)$ a nonlinear least squares algorithm is used. To get good performance we need to supply the least squares function with the derivative of $\phi(\theta)$. From (\ref{eq:ex23-min}) we get that 
+To actually find a minimum for $\phi(\theta)$ a nonlinear least squares algorithm is used. To get good performance we need to supply the least squares function with the derivative of the residuals. We get that 
 
 \begin{equation*}
-    \frac{\partial\phi(\theta)}{\partial\theta}=-\sum_{i=1}^n\frac{\partial\hat{y}(\theta; t_i)}{\partial\theta}
+    \frac{\partial (y_i - \hat{y}(\theta;t_i))}{\partial\theta}=-\frac{\partial\hat{y}(\theta; t_i)}{\partial\theta}
 \end{equation*}
 
-A function that calculates $\frac{\partial}{\partial\theta}\hat{y}(\theta;t_i)$ (and $\hat{y}(\theta;t_i)$) for all $t_i$ is therefore implemented and shown in listing~\ref{lst:ex23-yhatdot}.
+so we only need to determine $\frac{\partial}{\partial\theta}\hat{y}(\theta;t_i)$. A function that calculates $\frac{\partial}{\partial\theta}\hat{y}(\theta;t_i)$ (and $\hat{y}(\theta;t_i)$) for all $t_i$ is therefore implemented and shown in listing~\ref{lst:ex23-yhatdot}.
 
-\lstinputlisting[label=ex23-yhatdot,caption={CAPTION!!!}]{../src/ex23_z.m}
+\lstinputlisting[label={lst:ex23-yhatdot},caption={Function to calculate $\hat{y}$ and $\frac{\partial\hat{y}}{\partial\theta}$ for a given $\theta$ and all $t_i$}]{../src/ex23_z.m}
 
 The implementation is based on page 11-17 in the slides for lecture 12. The implementation utilizes the fact that since $\hat{y}=x$ we have that (using the notation of the slide) $S_\theta(t) = \frac{\partial}{\partial\theta}\hat{y}(\theta; t)$. By calculating $z$ (as defined on slide 16) we get excatly the information we need to run a non-linear least squares method.
 
@@ -280,16 +282,40 @@ including the LaTex code used for the report can also be found at
 
 \subsection{Question 1.2}\label{app:ex12}
 \lstinputlisting[caption={ex12.m}]{../src/ex12.m}
+\lstinputlisting[caption={plot\_fit.m}]{../src/plot_fit.m}
 
 \subsection{Question 1.3}\label{app:ex13}
 \lstinputlisting[caption={ex13.m}]{../src/ex13.m}
+\lstinputlisting[caption={plot\_fit\_with\_res\_analysis.m}]{../src/plot_fit_with_res_analysis.m}
+\lstinputlisting[caption={run\_score.m}]{../src/run_score.m}
 
-\subsection{Question 2.1}\label{app:ex13}
+\subsection{Question 1.4}\label{app:ex14}
+\lstinputlisting[caption={ex14.m}]{../src/ex14.m}
+
+\subsection{Question 2.1}\label{app:ex21}
 \lstinputlisting[caption={ex21.m}]{../src/ex21.m}
+\lstinputlisting[caption={calc\_chemical\_reaction\_params\_linear.m}]{../src/calc_chemical_reaction_params_linear.m}
+\lstinputlisting[caption={ex2\_plot\_model\_with\_data.m}]{../src/ex2_plot_model_with_data.m}
+
+\subsection{Question 2.2}\label{app:ex22}
+\lstinputlisting[caption={ex22.m}]{../src/ex22.m}
+\lstinputlisting[caption={ex22\_phi.m}]{../src/ex22_phi.m}
+\lstinputlisting[caption={residual\_jacobian\_ex22.m}]{../src/residual_jacobian_ex22.m}
+\lstinputlisting[caption={calculate\_and\_save\_covariance\_info.m}]{../src/calculate_and_save_covariance_info.m}
+
+\subsection{Question 2.3}\label{app:ex23}
+\lstinputlisting[caption={ex23.m}]{../src/ex23.m}
+
+\subsection{Question 2.3 marquardt}\label{app:ex23-marquardt}
+\lstinputlisting[caption={ex23\_marquardt.m}]{../src/ex23_marquardt.m}
+\lstinputlisting[caption={ex23\_yhat.m}]{../src/ex23_yhat.m}
+\lstinputlisting[caption={ex23\_z.m}]{../src/ex23_z.m}
+\lstinputlisting[caption={get\_phi\_fun.m}]{../src/get_phi_fun.m}
+\lstinputlisting[caption={residual\_jacobian\_ex23.m}]{../src/residual_jacobian_ex23.m}
 
 \subsection{Helper functions}\label{app:helpers}
-\lstinputlisting[caption={plot\_fit.m}]{../src/plot_fit.m}
-\lstinputlisting[caption={plot\_fit\_with\_res\_analysis.m}]{../src/plot_fit_with_res_analysis.m}
+\lstinputlisting[caption={saveeps.m}]{../src/saveeps.m}
+\lstinputlisting[caption={saveline.m}]{../src/saveline.m}
 
 \pagebreak
 \input{../../footer}

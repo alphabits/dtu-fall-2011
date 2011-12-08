@@ -5,10 +5,10 @@
 \@writefile{lot}{\select@language{english}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \texttt  {NOfit}} function to fit sine, cosines of order {\relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \texttt  {n}}}{1}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Helper function {\relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \texttt  {get\_A}} used to generate design matrix}{1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CAPTION!!!\relax }}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 3rd order fitted model $M$\relax }}{2}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:3rd-order-fit}{{1}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces CAPTION!!!\relax }}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Fitted models for $n=3,5,7,9,11,13$ including residual test results\relax }}{3}}
 \newlabel{fig:ex13}{{2}{3}}
 \newlabel{eq:ex21-base-model}{{1}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Plot of experimental data $(x,y)$ and inverse data $(1/x, 1/y)$ for question 2\relax }}{4}}
@@ -17,37 +17,62 @@
 \newlabel{lst:linear-params}{{3}{5}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3}Function that finds $\theta _1$ and $\theta _2$ by fitting $\frac  {1}{y}$ linear on $\frac  {1}{x}$}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Plot of original data and the model $\mathaccentV {hat}05E{y}$, with parameters estimated from the linear model (\ref  {eq:ex21-linear-model})\relax }}{5}}
-\newlabel{}{{4}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces CAPTION XXX\relax }}{6}}
+\newlabel{fig:data-and-linear-model}{{4}{5}}
+\newlabel{eq:ex22-phi}{{3}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Contour plot of $\phi $ defined in (\ref  {eq:ex22-phi}) with $\theta _{LS}^*$ shown\relax }}{6}}
 \newlabel{fig:ex22-contour-linear}{{5}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces CAPTION XXX\relax }}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Contour plot of $\phi $ defined in (\ref  {eq:ex22-phi}) with $\theta ^*$ shown\relax }}{7}}
 \newlabel{fig:ex22-contour-marquardt}{{6}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces CAPTION XXX\relax }}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Plot of linear and non-linear fitted models\relax }}{7}}
 \newlabel{fig:ex22-models}{{7}{7}}
-\newlabel{eq:ex23-ode}{{3}{8}}
-\newlabel{eq:ex23-min}{{4}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces CAPTION XXX\relax }}{8}}
+\newlabel{eq:ex23-ode}{{4}{8}}
+\newlabel{eq:ex23-min}{{5}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Plot of measurements of concentration for different times\relax }}{8}}
 \newlabel{fig:ex23-data}{{8}{8}}
 \newlabel{lst:ex23-yhat}{{4}{8}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4}Function to compute $\mathaccentV {hat}05E{y}(\theta ,t_i)$, for a given $\theta $ and all $t_i$}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces CAPTION XXX\relax }}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Contour plot for $\phi $ defined in (\ref  {eq:ex23-min})\relax }}{9}}
 \newlabel{fig:ex23-contour}{{9}{9}}
-\newlabel{ex23-yhatdot}{{5}{9}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}CAPTION!!!}{9}}
+\newlabel{lst:ex23-yhatdot}{{5}{9}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}Function to calculate $\mathaccentV {hat}05E{y}$ and $\frac  {\partial \mathaccentV {hat}05E{y}}{\partial \theta }$ for a given $\theta $ and all $t_i$}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Appendices}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Question 1.2}{11}}
 \newlabel{app:ex12}{{A.1}{11}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {6}ex12.m}{11}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7}plot\_fit.m}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Question 1.3}{11}}
 \newlabel{app:ex13}{{A.2}{11}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7}ex13.m}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Question 2.1}{11}}
-\newlabel{app:ex13}{{A.3}{11}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {8}ex21.m}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Helper functions}{12}}
-\newlabel{app:helpers}{{A.4}{12}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}plot\_fit.m}{12}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}plot\_fit\_with\_res\_analysis.m}{12}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {8}ex13.m}{11}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}plot\_fit\_with\_res\_analysis.m}{12}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}run\_score.m}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Question 1.4}{12}}
+\newlabel{app:ex14}{{A.3}{12}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {11}ex14.m}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Question 2.1}{12}}
+\newlabel{app:ex21}{{A.4}{12}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {12}ex21.m}{13}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {13}calc\_chemical\_reaction\_params\_linear.m}{13}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {14}ex2\_plot\_model\_with\_data.m}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5}Question 2.2}{14}}
+\newlabel{app:ex22}{{A.5}{14}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {15}ex22.m}{14}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {16}ex22\_phi.m}{15}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {17}residual\_jacobian\_ex22.m}{15}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {18}calculate\_and\_save\_covariance\_info.m}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.6}Question 2.3}{16}}
+\newlabel{app:ex23}{{A.6}{16}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {19}ex23.m}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.7}Question 2.3 marquardt}{17}}
+\newlabel{app:ex23-marquardt}{{A.7}{17}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {20}ex23\_marquardt.m}{17}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {21}ex23\_yhat.m}{17}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {22}ex23\_z.m}{17}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {23}get\_phi\_fun.m}{18}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {24}residual\_jacobian\_ex23.m}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.8}Helper functions}{18}}
+\newlabel{app:helpers}{{A.8}{18}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {25}saveeps.m}{18}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {26}saveline.m}{18}}
 \bibcite{nocedal06}{1}
 \bibcite{nielsen10}{2}
 \bibcite{nielsen00}{3}
