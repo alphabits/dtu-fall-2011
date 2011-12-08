@@ -11,7 +11,7 @@ axis([0 2.2 0 0.08]);
 xlabel('Concentration');
 ylabel('Reaction rate');
 title('Plot of reaction rate as function of concentration');
-saveeps('../media/ex21-plot.eps');
+%saveeps('../media/ex21-plot.eps');
 
 plot(1./x, 1./y, 'r.', 'MarkerSize', 16);
 set(gca, 'FontSize', fs);
@@ -19,16 +19,17 @@ axis([0 6 0 140]);
 xlabel('Inverse Concentration');
 ylabel('Inverse Reaction rate');
 title('Plot of the inverse data (1/x, 1/y)');
-saveeps('../media/ex21-plot-inv.eps');
+%saveeps('../media/ex21-plot-inv.eps');
 
-%theta = calc_chemical_reaction_params_linear(x, y);
-%yhat = @(x, theta)(theta(1)*x)./(theta(2)+x);
-%x_preds = linspace(0,2,100);
-%y_preds = yhat(x_preds, theta);
+[theta, lambda] = calc_chemical_reaction_params_linear(x, y);
+ex2_plot_model_with_data(theta, x, y);
+%saveeps('../media/ex21-linear-model.eps');
 
-%plot(x_preds, y_preds, 'b-');
+fid = fopen('../tables/param-estimates-ex21.tex', 'w');
+fprintf(fid, '\\theta_{LS}^* \\approx \\begin{pmatrix} %0.2f \\\\ %0.2f \\end{pmatrix} \n', theta);
+fclose(fid);
 
-% plot(1./x, 1./y, 'ro');
+% plot(x_inv_preds, y_inv_preds, 'b-', 1./x, 1./y, 'ro');
 % axis([0 6 0 140]);
 
 
